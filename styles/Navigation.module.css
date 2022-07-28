@@ -1,0 +1,27 @@
+.nav {
+  display: flex;
+  border-bottom: 1px solid grey;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-right: 8em;
+  z-index: 2;
+  opacity: 1;
+}
+
+.navItem {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  gap: 4em;
+  margin-right: 8em;
+  line-height: 1em;
+}
+
+.navItem li:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
