@@ -1,7 +1,16 @@
 import styles from "../styles/Navigation.module.css";
 import Link from "next/link";
+import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    props.theme == "light" ? setTheme("dark") : setTheme("light");
+    theme = props.theme;
+  };
+  props.func(theme);
+
   return (
     <nav className={styles.nav}>
       <span>
@@ -10,7 +19,7 @@ const Navbar = () => {
       <ul className={styles.navItem}>
         <li>
           <Link href="/about">
-            <a>About me</a>
+            <a>Expertise</a>
           </Link>
         </li>
         <li>
@@ -23,6 +32,7 @@ const Navbar = () => {
             <a>Contact</a>
           </Link>
         </li>
+        <button onClick={toggleTheme}>toggle theme</button>
       </ul>
     </nav>
   );

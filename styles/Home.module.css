@@ -1,15 +1,23 @@
-.container {
-  padding: 0 5rem;
-}
-
 .main {
-  min-height: 100vh;
-  /*flex: 1;*/
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 90px;
   z-index: 1;
+  height: 800px;
+}
+
+.myselfContainer {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  /*align-items: center;*/
+  justify-content: space-evenly;
+}
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
 }
 
 .title {
@@ -20,9 +28,9 @@
   animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
   overflow: hidden;
-  position: relative;
-  top: 50px;
-  left: -300px;
+  /*position: relative;*/
+  /*top: 50px;*/
+  /*left: -300px;*/
 }
 
 @keyframes typing {
@@ -36,21 +44,20 @@
     border-color: transparent;
   }
 }
-.title,
-.description {
-  text-align: center;
-}
+/*.title,*/
+/*.description {*/
+/*}*/
 
 .description {
-  position: relative;
-  left: -350px;
+  /*position: relative;*/
+  /*left: -350px;*/
   margin: 2rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
 }
 
 .code {
-  background: #fafafa;
+  background: #ebe7d6;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
@@ -59,10 +66,9 @@
 }
 
 .cardContainer {
-  position: relative;
-  top: -200px;
-  left: 400px;
+  margin-top: 90px;
 }
+
 .border {
   height: 329px;
   width: 270px;
@@ -112,25 +118,28 @@
   transition: opacity 1s;
 }
 
+.gridContainer {
+  display: flex;
+  width: 900px;
+  flex-direction: row;
+  justify-content: left;
+  align-items: flex-start;
+}
+
 .grid {
   display: flex;
-  position: relative;
-  top: -200px;
-  left: -490px;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 500px;
+  /*align-items: flex-start;*/
   flex-direction: column;
 }
 
 .grid a {
   padding: 0.5rem;
+  text-decoration: none;
 }
 
 .logo {
   height: 1em;
-  margin-left: 0.5rem;
+  /*margin-left: 0.9rem;*/
 }
 
 @media (max-width: 600px) {
