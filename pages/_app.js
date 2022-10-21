@@ -2,6 +2,7 @@ import { ThemeProvider } from "styled-components";
 import { useState } from "react";
 import { lightTheme, darkTheme, GlobalStyles } from "../styles/ThemeConfig";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState("light");
@@ -13,8 +14,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <Component {...pageProps} />
       <Navbar func={pull_data} theme={theme} />
+      <Component {...pageProps} />
+      <Footer />
     </ThemeProvider>
   );
 }
