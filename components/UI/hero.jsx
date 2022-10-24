@@ -1,8 +1,8 @@
-import Article from "../components/article";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Article from "../article";
 import styled from "styled-components";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const StyledLink = styled.a`
   &:link {
@@ -24,18 +24,24 @@ const StyledLink = styled.a`
   }
 `;
 
-export default function Home() {
+const Hero = () => {
   return (
-    <div>
+    <main className={styles.container}>
       <div className={styles.myselfContainer}>
         <div className={styles.titleContainer}>
           <h1 className={styles.title}>Victor Nyoyoko...</h1>
 
-          <p className={styles.description}>
-            <code className={styles.code}>Software Engineer/Developer</code>
-          </p>
+          <code className={styles.code}>Software Engineer/Developer</code>
+
           <Article>
-            <p></p>
+            <p>
+              I am driven by an unceasing curiousity for engineering (as a
+              career). This curiousity has fostered a discipline to learn,
+              apply, imitate and produce different ideas and products. An any
+              opportunity to experiment in any of the science field, I would
+              like to contribute to society&apos;s advancement and also in the
+              development of individuals to stimulate their productivity.
+            </p>
           </Article>
         </div>
         <div className={styles.cardContainer}>
@@ -69,6 +75,8 @@ export default function Home() {
           </Link>
         </div>
       </div>
-    </div>
+    </main>
   );
-}
+};
+
+export default Hero;

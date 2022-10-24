@@ -1,7 +1,11 @@
 import Head from "next/head";
-import Home from "./home";
+import Hero from "../components/UI/hero";
+import Expertise from "../components/UI/expertise";
+import Projects from "../components/UI/projects";
+import Contact from "../components/UI/contact";
 import "../styles/font-awesome";
-import styles from "../styles/Home.module.css";
+import { useState, useEffect } from "react";
+
 // import Image from "next/image";
 // import Franky from "../public/1824.png";
 // import Rebel from "../public/rebel.png";
@@ -19,7 +23,14 @@ import styles from "../styles/Home.module.css";
 //   />
 // </div>
 
-export default function Index() {
+export default function Home() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    props.theme == "light" ? setTheme("dark") : setTheme("light");
+    theme = props.theme;
+  };
+
   return (
     <>
       <Head>
@@ -27,10 +38,10 @@ export default function Index() {
         <meta name="description" content="Understanding Victor Nyoyoko" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main className={styles.main}>
-        <Home />
-      </main>
+      <Hero />
+      <Expertise />
+      <Projects />
+      <Contact />
     </>
   );
 }
