@@ -136,8 +136,7 @@
   padding: 10px;
   border-radius: 30px;
   margin-top: 100px;
-  border-top: transparent;
-  border: 3px solid black;
+  /* border: 3px solid black; */
 }
 .grid a {
   padding: 0.5rem;

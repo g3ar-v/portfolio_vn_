@@ -1,16 +1,6 @@
 import styles from "./Header.module.css";
 import Link from "next/link";
-import styled from "styled-components";
 import StyledLink from "../../styles/ThemeConfig";
-
-const StyledButton = styled.button`
-  color: #c69b7b;
-  width: 40px;
-  height: 40px;
-  border: 2px solid black;
-  background: #3a3845;
-  border-radius: 3px;
-`;
 
 const NAVLINK = [
   { path: "/", display: "Home" },

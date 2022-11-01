@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 // import { useState } from "react";
-import { lightTheme, darkTheme, GlobalStyles } from "../styles/ThemeConfig";
+import { lightTheme, GlobalStyles } from "../styles/ThemeConfig";
 // import { ML } from "./interests";
 // import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../components/layout";

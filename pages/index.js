@@ -4,7 +4,6 @@ import Expertise from "../components/UI/expertise";
 import Projects from "../components/UI/projects";
 import Contact from "../components/UI/contact";
 import "../styles/font-awesome";
-import { useState, useEffect } from "react";
 
 // import Image from "next/image";
 // import Franky from "../public/1824.png";
@@ -24,12 +23,12 @@ import { useState, useEffect } from "react";
 // </div>
 
 export default function Home() {
-  const [theme, setTheme] = useState("light");
+  // const [theme, setTheme] = useState("light");
 
-  const toggleTheme = () => {
-    props.theme == "light" ? setTheme("dark") : setTheme("light");
-    theme = props.theme;
-  };
+  // const toggleTheme = () => {
+  //   props.theme == "light" ? setTheme("dark") : setTheme("light");
+  //   theme = props.theme;
+  // };
 
   return (
     <>

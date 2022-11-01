@@ -13,15 +13,14 @@ const StyledLink = styled.a`
     background: #3a3845;
     border-radius: 9px;
     margin: 3px;
-    width: 100px;
   }
-  &:active {
-    color: #c69b7b;
-    background: #3a3845;
-    border-radius: 9px;
-    margin: 3px;
-    width: 100px;
-  }
+  // &:active {
+  //   color: #c69b7b;
+  //   background: #3a3845;
+  //   border-radius: 9px;
+  //   margin: 3px;
+  //   width: 100px;
+  // }
 `;
 
 const Hero = () => {
@@ -35,12 +34,12 @@ const Hero = () => {
 
           <Article>
             <p>
-              I am driven by an unceasing curiousity for engineering (as a
-              career). This curiousity has fostered a discipline to learn,
-              apply, imitate and produce different ideas and products. An any
-              opportunity to experiment in any of the science field, I would
-              like to contribute to society&apos;s advancement and also in the
-              development of individuals to stimulate their productivity.
+              I am driven by an unceasing curiousity for engineering. This
+              curiousity has fostered a discipline to learn, apply, imitate and
+              produce different ideas and products. An any opportunity to
+              experiment in any of the science field, I would like to contribute
+              to society&apos;s advancement and also in the development of
+              individuals by stimulating their productivity.
             </p>
           </Article>
         </div>
@@ -57,7 +56,10 @@ const Hero = () => {
           <h1>On the Web</h1>
           <Link href="https://www.instagram.com/vikt4r/" passHref>
             <StyledLink>
-              <FontAwesomeIcon icon={["fab", "instagram"]} /> Instagram
+              <FontAwesomeIcon icon={["fab", "instagram"]} /> Instagram{" "}
+              {
+                "<!-- I try to post some videos of the projects I work on here -->"
+              }
             </StyledLink>
           </Link>
           <Link href="https://open.spotify.com/user/frankjnr368" passHref>
@@ -71,7 +73,13 @@ const Hero = () => {
             </StyledLink>
           </Link>
           <Link href="https://www.fiverr.com/users/victornyoyoko/" passHref>
-            <StyledLink> fiverr</StyledLink>
+            <StyledLink>
+              {" "}
+              fiverr{" "}
+              <div className={{}}>
+                {"<!-- Enquiries about a project you want me to handle -->"}
+              </div>
+            </StyledLink>
           </Link>
         </div>
       </div>
