@@ -25,6 +25,9 @@
   line-height: 1em;
 }
 
+.menu__active {
+  display: block !important;
+}
 /*.navItem li:hover {*/
 /*text-decoration: underline;*/
 /*text-underline-offset: 0.3em;*/

@@ -36,10 +36,10 @@ const Hero = () => {
             <p>
               I am driven by an unceasing curiousity for engineering. This
               curiousity has fostered a discipline to learn, apply, imitate and
-              produce different ideas and products. An any opportunity to
-              experiment in any of the science field, I would like to contribute
-              to society&apos;s advancement and also in the development of
-              individuals by stimulating their productivity.
+              produce different ideas and products. I would relish an
+              opportunity to experiment in any of the science field and to
+              contribute to society&apos;s advancement and also in the
+              development of individuals by stimulating their productivity.
             </p>
           </Article>
         </div>
