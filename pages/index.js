@@ -1,9 +1,9 @@
-import Head from "next/head";
-import Hero from "../components/UI/hero";
-import Expertise from "../components/UI/expertise";
-import Projects from "../components/UI/projects";
-import Contact from "../components/UI/contact";
-import "../styles/font-awesome";
+import Head from 'next/head';
+import Hero from '../components/UI/hero';
+import Expertise from '../components/UI/expertise';
+import Works from '../components/UI/works';
+import Contact from '../components/UI/contact';
+import '../styles/font-awesome';
 
 // import Image from "next/image";
 // import Franky from "../public/1824.png";
@@ -23,13 +23,6 @@ import "../styles/font-awesome";
 // </div>
 
 export default function Home() {
-  // const [theme, setTheme] = useState("light");
-
-  // const toggleTheme = () => {
-  //   props.theme == "light" ? setTheme("dark") : setTheme("light");
-  //   theme = props.theme;
-  // };
-
   return (
     <>
       <Head>
@@ -39,7 +32,7 @@ export default function Home() {
       </Head>
       <Hero />
       <Expertise />
-      <Projects />
+      <Works />
       <Contact />
     </>
   );

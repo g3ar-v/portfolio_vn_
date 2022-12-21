@@ -1,7 +1,7 @@
-import styles from "../../styles/Expertise.module.css";
-import styled from "styled-components";
-import Link from "next/link";
-import Article from "../article";
+import styles from '../../styles/Expertise.module.css';
+import styled from 'styled-components';
+import Link from 'next/link';
+import Article from '../article';
 
 const StyledLink = styled.a`
   color: #c69b7b;

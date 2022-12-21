@@ -1,12 +1,10 @@
-import styles from "./Footer.module.css";
+import { Box } from '@chakra-ui/react';
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <p>
-        &copy; {new Date().getFullYear()} Victor Nyoyoko. All rights reserved.
-      </p>
-    </footer>
+    <Box p={2} align="center" fontSize="sm" color="sonicSilver">
+      &copy; {new Date().getFullYear()} Victor Nyoyoko. All rights reserved.
+    </Box>
   );
 };
 

@@ -1,33 +1,17 @@
-import { ThemeProvider } from "styled-components";
-// import { useState } from "react";
-import { lightTheme, GlobalStyles } from "../styles/ThemeConfig";
-// import { ML } from "./interests";
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "../components/layout";
-// const router = createBrowserRouter(
-//   createRoutersFromElements(
-//     <Route path="/">
-//     </Route>
-//       <Route path="/expertise" element={<Expertise/>}>
+import Fonts from '../components/fonts';
+import theme from '../styles/theme';
+import Layout from '../components/layout';
+import { ChakraProvider } from '@chakra-ui/react';
 
-//       <Route path="/machinelearning" element={<ML />} />
-//         </Route>
-//   )
-// );
-
-function MyApp({ Component, pageProps }) {
+function Website({ Component, pageProps }) {
   return (
-    <>
-      {/*<RouterProvider router={router}/>*/}
-      <ThemeProvider theme={lightTheme}>
-        <GlobalStyles />
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-        {/* </RouterProvider>*/}
-      </ThemeProvider>
-    </>
+    <ChakraProvider theme={theme}>
+      <Fonts />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ChakraProvider>
   );
 }
 
-export default MyApp;
+export default Website;
