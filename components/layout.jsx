@@ -1,49 +1,31 @@
-import { Box, Flex, VStack } from '@chakra-ui/react';
-import Link from 'next/link';
-import Header from './header/header';
-import Footer from './footer/footer';
-import ThemeToggleButton from './theme-toggle-button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Box } from '@chakra-ui/react';
+import LinkBar from './linkbar';
+import Navbar from './navbar';
+import Footer from './footer';
 
 const Layout = (props) => {
   return (
-    <Box as="main" display="flex">
-      <Flex
-        position="sticky"
-        width="120px"
-        height="100vh"
-        direction="column"
-        pt={10}
-        top="0px"
-        borderRight="2px solid #44484C"
-        alignItems="center"
-        justifyContent="flex-start"
+    <Box
+      display="flex"
+      minHeight="100%"
+      alignItems="flex-start"
+      flexDirection="row"
+      boxSizing="border-box"
+      m="0px"
+    >
+      <LinkBar />
+      <Box
+        className="page"
+        height="2100.88px"
+        boxSizing="border-box"
+        display="block"
+        flexGrow={1}
+        pt="80px"
       >
-        <VStack
-          w={100}
-          pl="2"
-          position="absolute"
-          left="-10%"
-          top="auto"
-          bottom="0%"
-          pb={10}
-          gap={2}
-        >
-          <Link href="https://www.instagram.com/vikt4r/" passHref>
-            <FontAwesomeIcon icon={['fab', 'instagram']} size="xl" />
-          </Link>
-          <Link href="https://open.spotify.com/user/frankjnr368" passHref>
-            <FontAwesomeIcon icon={['fab', 'spotify']} size="xl" />
-          </Link>
-          <Link href="https://github.com/g3ar-v/" passHref>
-            <FontAwesomeIcon icon={['fab', 'github-alt']} size="xl" />
-          </Link>
-          <ThemeToggleButton />
-        </VStack>
-      </Flex>
-      <Box>
-        <Header />
-        <div>{props.children}</div>
+        <Navbar />
+        <Box className="page-content" display="block" boxSizing="border-box">
+          {props.children}
+        </Box>
         <Footer />
       </Box>
     </Box>
