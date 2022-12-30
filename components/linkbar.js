@@ -1,6 +1,5 @@
 import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import Link from '@chakra-ui/react';
 import ThemeToggleButton from './theme-toggle-button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
