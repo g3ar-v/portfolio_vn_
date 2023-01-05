@@ -1,75 +1,76 @@
-import {
-  Box,
-  GridItem,
-  Text,
-  Heading,
-  Grid,
-  Link,
-  LinkBox,
-  LinkOverlay,
-  useColorModeValue
-} from '@chakra-ui/react';
-import Image from 'next/image';
-import NextLink from 'next/link';
-import thumbNotion from '../../public/routine.jpg';
+import { Box, Grid, Heading } from '@chakra-ui/react';
+import PortfolioItem from '../portfolio-item';
 
-const notion = [
-  {
-    path: 'https://github.com/g3ar-v/notion-routine-skill.git',
-    children: 'github'
-  },
-  {
-    path: '',
-    children: 'Machine Learning'
-  },
-  {
-    path: '',
-    children: 'Python'
-  }
-];
-const NLink = ({ children, href }) => {
-  return (
-    <NextLink href={href} passHref>
-      <Link>{children}</Link>
-    </NextLink>
-  );
-};
+// import portfolio_data from '../../data/portfolio_data.json';
 
-const PortfolioItem = ({ children, href, title, thumbnail, link }) => (
-  <GridItem
-    display="block"
-    textAlign="center"
-    border={`3px solid ${useColorModeValue('grey', 'teal')}`}
-    mb="20px"
-  >
-    <LinkBox cursor="pointer">
-      <Image
-        src={thumbnail}
-        alt={title}
-        className="grid-item-thumbnail"
-        height={3900}
-        placeholder="blur"
-        loading="lazy"
-      />
-
-      <LinkOverlay href={href} target="_blank">
-        <Text mt={2}>{title}</Text>
-      </LinkOverlay>
-      <Text fontSize={14}>{children}</Text>
-      <Box gap="10px" display="flex" justifyContent="space-evenly" mb="25px">
-        {link.map((item, index) => (
-          <Box key={index} borderStyle="inset" borderRadius="3px" p={1}>
-            <NLink href={item.path} forwardedAs={item.path} key={index}>
-              {item.children}
-            </NLink>
-          </Box>
-        ))}
-      </Box>
-    </LinkBox>
-  </GridItem>
-);
+import routine from '../../public/routine.jpg';
+import machine from '../../public/machine.jpg';
+import attendance from '../../public/attendance.jpg';
 
 const Portfolio = () => {
+  const portfolio_data = {
+    notion: {
+      title: 'Notion Routine Skill',
+      thumbnail: routine,
+      link: 'https://github.com/g3ar-v/notion-routine-skill.git',
+      tags: [
+        {
+          name: 'Machine Learning',
+          icon: 'rebel'
+        },
+        {
+          name: 'Python',
+          icon: 'python'
+        }
+      ],
+
+      description:
+        'A skill for mycroftAI that notifies you on what you are supposed to do at any time and times you have selected. Notion is used as the database and stores the goals.'
+    },
+    trevor: {
+      title: 'MycroftAI (trevor)',
+      thumbnail: machine,
+      link: '#',
+      tags: [
+        {
+          name: 'Machine Learning',
+          icon: 'rebel'
+        },
+        {
+          name: 'Python',
+          icon: 'python'
+        },
+        {
+          name: 'Bash',
+          icon: 'linux'
+        }
+      ],
+      description:
+        'A personal assistant that can do many things. It is built on top of mycroftAI.'
+    },
+    attendance: {
+      title: 'Attendance System',
+      thumbnail: attendance,
+      link: '#',
+      tags: ['Raspberry Pi', 'React', 'NodeJS', 'Flask'],
+      tags: [
+        {
+          name: 'Raspberry Pi',
+          icon: 'raspberry-pi'
+        },
+        {
+          name: 'React',
+          icon: 'react'
+        },
+        {
+          name: 'NodeJS',
+          icon: 'node-js'
+        }
+      ],
+      description:
+        'A system that can take attendance using a Fingerprint and an rfid.'
+    }
+  };
   return (
     <Box
       id="portfolio"
@@ -78,13 +79,15 @@ const Portfolio = () => {
       display="block"
       boxSizing="border-box"
       position={'relative'}
+      mb="40px"
+      height="2000px"
     >
       <Box
         display="flex"
         flexDirection="column"
         alignItems="center"
         margin="auto"
-        maxWidth="1100px"
+        maxWidth="1500px"
       >
         <Box
           mb="60px"
@@ -103,19 +106,30 @@ const Portfolio = () => {
           alignItems="stretch"
           gridAutoColumns="1fr"
           gridTemplateColumns="470px 470px"
-          gridTemplateRows="536.438px 477.172px"
+          gridTemplateRows="736.438px 736.438px"
           gap="120px"
         >
           <PortfolioItem
-            href="https://github.com/g3ar-v/notion-routine-skill.git"
-            title="Notion Routine Skill"
-            thumbnail={thumbNotion}
-            link={notion}
-          >
-            A skill for mycroftAI that notifies you on what you are supposed to
-            do at any time and times you have selected. Notion is used as the
-            database and stores the goals.
-          </PortfolioItem>
+            tags={portfolio_data.notion.tags}
+            title={portfolio_data.notion.title}
+            thumbnail={portfolio_data.notion.thumbnail}
+            link={portfolio_data.notion.link}
+            description={portfolio_data.notion.description}
+          />
+          <PortfolioItem
+            tags={portfolio_data.trevor.tags}
+            title={portfolio_data.trevor.title}
+            thumbnail={portfolio_data.trevor.thumbnail}
+            link={portfolio_data.trevor.link}
+            description={portfolio_data.trevor.description}
+          />
+          <PortfolioItem
+            tags={portfolio_data.attendance.tags}
+            title={portfolio_data.attendance.title}
+            thumbnail={portfolio_data.attendance.thumbnail}
+            link={portfolio_data.attendance.link}
+            description={portfolio_data.attendance.description}
+          />
         </Grid>
       </Box>
     </Box>

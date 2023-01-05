@@ -57,12 +57,12 @@ const Hero = () => {
               boxSizing="border-box"
             >
               <Text variant="outline-s" fontSize="xl" mb="31px" mt="60px">
-                I design pipelines, choose models for training data, evaluate
-                and train the models & fine-tune models.
+                I design pipelines, choose models for training data, evaluate,
+                train & fine-tune these models.
               </Text>
               <Text variant="outline-s" fontSize="xl" mb="31px">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel
-                ex tempus, cursus mi nec, volutpat diam.
+                The aim is to solve world problems with Machine Learning and to
+                contribute to this new era.
               </Text>
               <NLink href="#portfolio">ABOUT ME</NLink>
             </Box>

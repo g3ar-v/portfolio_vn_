@@ -4,10 +4,11 @@ import FootprintIcon from './gear';
 import styled from '@emotion/styled';
 
 const LogoBox = styled.span`
+  font-weight: 700;
   font-size: 20px;
   display: inline-flex;
   align-items: center;
-  height: 50px;
+  height: 30px;
   line-height: 20px;
   padding: 10px;
 
@@ -22,17 +23,20 @@ const LogoBox = styled.span`
 
 const Logo = () => {
   return (
-    <Link href="/" scroll={false}>
+    <Link href="/">
       <a>
         <LogoBox>
           <FootprintIcon />
           <Text
+            as="div"
+            whiteSpace="pre-wrap"
             color={useColorModeValue('blackMarlin', 'athsSpecial')}
-            fontFamily="Playfair Display"
+            fontFamily="Plus Jakarta sans"
             fontWeight="700"
-            mb="10px"
+            ml={3}
+            mb="5px"
           >
-            g3ar
+            Victor Nyoyoko
           </Text>
         </LogoBox>
       </a>
