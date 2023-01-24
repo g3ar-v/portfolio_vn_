@@ -44,7 +44,7 @@ const PortfolioItem = ({ tags, title, thumbnail, link, description }) => (
           </Text>
         </LinkOverlay>
         <Text fontSize={16}>{description}</Text>
-        <HStack align="center" spacing={2} mt={2} ml={2}>
+        <HStack flexWrap="wrap" align="center" spacing={2} mt={2} ml={2}>
           {tags.map((element, index) => (
             <Tag key={index}>
               <HStack mt="5px" ml="15px" mr="15px">

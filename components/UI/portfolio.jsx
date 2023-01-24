@@ -43,7 +43,8 @@ const Portfolio = () => {
         {
           name: 'Bash',
           icon: 'linux'
-        }
+        },
+        { name: 'MycroftAI', icon: 'rebel' }
       ],
       description:
         'A personal assistant that can do many things. It is built on top of mycroftAI.'

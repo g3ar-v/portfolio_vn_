@@ -38,6 +38,7 @@ const Hero = () => {
           display="block"
           boxSizing="border-box"
           className={styles.textContainer}
+          borderRight={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
         >
           <Container position="relative" display="block" mb="20px" mt="0px">
             <Heading as="h2" variant="page-title" size="2xl">
@@ -56,15 +57,23 @@ const Hero = () => {
               maxW="none"
               boxSizing="border-box"
             >
-              <Text variant="outline-s" fontSize="xl" mb="31px" mt="60px">
+              <Text variant="outline-s" fontSize="xl" mb="31px" mt="30px">
                 I design pipelines, choose models for training data, evaluate,
                 train & fine-tune these models.
               </Text>
               <Text variant="outline-s" fontSize="xl" mb="31px">
-                The aim is to solve world problems with Machine Learning and to
-                contribute to this new era.
+                The aim is to solve real-world problems with Machine Learning
+                and to contribute to this new era.
               </Text>
-              <NLink href="#portfolio">ABOUT ME</NLink>
+              <Box
+                borderRadius="lg"
+                width="fit-content"
+                p={3}
+                bg={useColorModeValue('whiteAlpha.300', 'whiteAlpha.200')}
+                css={{ backdropFilter: 'blur(10px)' }}
+              >
+                <NLink href="#portfolio">ABOUT ME</NLink>
+              </Box>
             </Box>
           </Container>
         </Box>
@@ -74,7 +83,7 @@ const Hero = () => {
           height="600px"
           width="400px"
           borderRadius="20px"
-          border={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
+          // border={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
         >
           <div className={styles.cardContainer}>
             <div className={`${styles.card} ${styles.card0}`}>
