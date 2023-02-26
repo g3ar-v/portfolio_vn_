@@ -35,30 +35,12 @@ const baseStyle = definePartsStyle({
       width: '6px',
       top: '10px'
     },
-    color: '#37393F',
-    bg: '#37393F',
-    _after: {
-      background: '#DBC8AC',
-      borderBottom: '13px solid transparent',
-      borderLeft: '13px solid #37393F',
-      borderTop: '13px solid transparent',
-      content: "''",
-      position: 'absolute',
-      right: 0,
-      top: 0
-    },
+
     _dark: {
       backround: '#37393F',
       _before: {
         background: '#161616',
         boxShadow: 'inset 0 1px rgba(79, 77, 82, 1)'
-      },
-      _after: {
-        background: '#161616',
-        borderBottom: '13px solid transparent',
-        borderLeft: '13px solid #37393F',
-        borderTop: '13px solid transparent',
-        content: "''"
       }
     }
   },

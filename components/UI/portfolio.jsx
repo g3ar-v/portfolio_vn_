@@ -1,4 +1,4 @@
-import { Box, Grid, Heading } from '@chakra-ui/react';
+import { Box, Grid, Heading, useColorModeValue } from '@chakra-ui/react';
 import PortfolioItem from '../portfolio-item';
 
 // import portfolio_data from '../../data/portfolio_data.json';
@@ -82,6 +82,7 @@ const Portfolio = () => {
       position={'relative'}
       mb="40px"
       height="2000px"
+      borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
     >
       <Box
         display="flex"

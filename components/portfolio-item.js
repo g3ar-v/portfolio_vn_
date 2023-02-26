@@ -48,11 +48,7 @@ const PortfolioItem = ({ tags, title, thumbnail, link, description }) => (
           {tags.map((element, index) => (
             <Tag key={index}>
               <HStack mt="5px" ml="15px" mr="15px">
-                <FontAwesomeIcon
-                  // color={`${useColorModeValue('teal', '#DBC8AC')}`}
-                  icon={['fab', `${element.icon}`]}
-                  size="md"
-                />
+                <FontAwesomeIcon icon={['fab', `${element.icon}`]} size="sm" />
                 <TagLabel ml={2}>{element.name}</TagLabel>
               </HStack>
             </Tag>

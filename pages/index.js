@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Hero from '../components/UI/hero';
 import Portfolio from '../components/UI/portfolio';
+import Conveyor from '../components/conveyor';
 // import Contact from '../components/UI/contact';
 import '../styles/font-awesome';
 
@@ -14,6 +15,7 @@ export default function Home() {
       </Head>
       <Hero />
       <Portfolio />
+      <Conveyor />
     </>
   );
 }

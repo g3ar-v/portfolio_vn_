@@ -8,7 +8,7 @@ const LinkBar = () => {
     <Box
       display="block"
       position="sticky"
-      height="300vh"
+      height="400vh"
       direction="column"
       top="0px"
       z-index={999}
