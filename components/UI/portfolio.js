@@ -1,11 +1,12 @@
-import { Box, Grid, Heading, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, useColorModeValue } from '@chakra-ui/react';
 import PortfolioItem from '../portfolio-item';
-
 // import portfolio_data from '../../data/portfolio_data.json';
 
+import { useState } from 'react';
 import routine from '../../public/routine.jpg';
 import machine from '../../public/machine.jpg';
 import attendance from '../../public/attendance.jpg';
+import styles from '../../styles/Home.module.css';
 
 const Portfolio = () => {
   const portfolio_data = {
@@ -28,7 +29,7 @@ const Portfolio = () => {
         'A skill for mycroftAI that notifies you on what you are supposed to do at any time and times you have selected. Notion is used as the database and stores the goals.'
     },
     trevor: {
-      title: 'MycroftAI (trevor)',
+      title: 'Trevor',
       thumbnail: machine,
       link: '#',
       tags: [
@@ -70,46 +71,51 @@ const Portfolio = () => {
       ],
       description:
         'A system that can take attendance using a Fingerprint and an rfid.'
+    },
+    dotfiles: {
+      title: 'Dotfiles',
+      thumbnail: attendance,
+      link: '#',
+      tags: ['Bash', 'Python', 'Raspberry Pi'],
+      tags: [
+        {
+          name: 'Bash',
+          icon: 'linux'
+        }
+      ]
     }
   };
+  const [isActive, setIsActive] = useState(false);
+  const handleCarouselClick = () => {
+    setIsActive((current) => !current);
+  };
   return (
-    <Box
-      id="portfolio"
-      pb="80px"
-      pt="80px"
-      display="block"
-      boxSizing="border-box"
-      position={'relative'}
-      mb="40px"
-      height="2000px"
-      borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
-    >
+    <Box borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}>
       <Box
+        id="portfolio"
+        pb="80px"
+        pt="80px"
         display="flex"
         flexDirection="column"
-        alignItems="center"
+        alignItems="flex-start"
+        boxSizing="border-box"
+        position="relative"
+        maxW="1500px"
+        // mb="40px"
         margin="auto"
-        maxWidth="1500px"
+        height="872.328px"
       >
+        <Heading as="h2" variant="page-title" size="2xl">
+          Portfolio
+        </Heading>
         <Box
-          mb="60px"
-          display="block"
+          marginTop="-20px"
+          padding="60px 50px"
+          margin="15px 0"
+          display="flex"
           position="relative"
-          boxSizing="border-box"
-          left="-450px"
-        >
-          <Heading as="h2" variant="page-title" size="2xl">
-            Portfolio
-          </Heading>
-        </Box>
-        <Grid
-          flexWrap="wrap"
-          boxSizing="border-box"
-          alignItems="stretch"
-          gridAutoColumns="1fr"
-          gridTemplateColumns="470px 470px"
-          gridTemplateRows="736.438px 736.438px"
-          gap="120px"
+          z-index="5"
+          className="owl-carousel custom-carousel"
         >
           <PortfolioItem
             tags={portfolio_data.notion.tags}
@@ -117,6 +123,8 @@ const Portfolio = () => {
             thumbnail={portfolio_data.notion.thumbnail}
             link={portfolio_data.notion.link}
             description={portfolio_data.notion.description}
+            className={`${styles.item} ${isActive ? 'active' : ''}`}
+            onClick={handleCarouselClick}
           />
           <PortfolioItem
             tags={portfolio_data.trevor.tags}
@@ -124,6 +132,8 @@ const Portfolio = () => {
             thumbnail={portfolio_data.trevor.thumbnail}
             link={portfolio_data.trevor.link}
             description={portfolio_data.trevor.description}
+            className={`${styles.item} ${isActive ? 'active' : ''}`}
+            onClick={handleCarouselClick}
           />
           <PortfolioItem
             tags={portfolio_data.attendance.tags}
@@ -131,8 +141,19 @@ const Portfolio = () => {
             thumbnail={portfolio_data.attendance.thumbnail}
             link={portfolio_data.attendance.link}
             description={portfolio_data.attendance.description}
+            className={`${styles.item} ${isActive ? 'active' : ''}`}
+            onClick={handleCarouselClick}
           />
-        </Grid>
+          <PortfolioItem
+            tags={portfolio_data.dotfiles.tags}
+            title={portfolio_data.dotfiles.title}
+            thumbnail={portfolio_data.dotfiles.thumbnail}
+            link={portfolio_data.dotfiles.link}
+            description={portfolio_data.dotfiles.description}
+            className={`${styles.item} ${isActive ? 'active' : ''}`}
+            onClick={handleCarouselClick}
+          />
+        </Box>
       </Box>
     </Box>
   );

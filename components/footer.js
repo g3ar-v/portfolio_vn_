@@ -2,8 +2,15 @@ import { Box } from '@chakra-ui/react';
 
 const Footer = () => {
   return (
-    <Box margin="auto" position="absolute" bottom="0">
-      <Box p={2} alignItems="center" fontSize="sm" color="sonicSilver">
+    <Box
+      display="flex"
+      width="100%"
+      position=" relative"
+      bottom="0"
+      min-height="30px"
+      alignItems="center"
+    >
+      <Box p={2} margin="auto" fontSize="sm" color="sonicSilver">
         &copy; {new Date().getFullYear()} Victor Nyoyoko. All rights reserved.
       </Box>
     </Box>

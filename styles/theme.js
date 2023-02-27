@@ -1,3 +1,5 @@
+/* Handles the theme and components from Chakra UI */
+
 import { extendTheme } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 import { tagAnatomy } from '@chakra-ui/anatomy';
@@ -57,16 +59,27 @@ const tagTheme = defineMultiStyleConfig({ baseStyle });
 const components = {
   Heading: {
     variants: {
-      'page-title': {
+      'page-title-main': {
         fontSize: 50,
         color: '#37393F',
         _dark: { color: '#37393F' }
       },
-      'page-title-2': {
+      'page-title-secondary': {
         fontSize: 50,
         color: '#DBC8AC',
         textShadow: '10px 4px 10px #5C5A52',
         _dark: { color: '#443737', textShadow: 'none' }
+      },
+      'page-title': {
+        fontSize: 50,
+        color: '#37393F',
+        marginLeft: '60px',
+        _dark: { color: '#37393F' }
+      },
+      'page-title-mini': {
+        fontSize: 30,
+        color: '#37393F',
+        _dark: { color: '#37393F' }
       }
     }
   },

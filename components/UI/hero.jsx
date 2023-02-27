@@ -41,13 +41,13 @@ const Hero = () => {
           borderRight={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
         >
           <Container position="relative" display="block" mb="20px" mt="0px">
-            <Heading as="h2" variant="page-title" size="2xl">
+            <Heading as="h2" variant="page-title-main" size="2xl">
               Software &
             </Heading>
-            <Heading as="h2" variant="page-title" size="2xl">
+            <Heading as="h2" variant="page-title-main" size="2xl">
               Machine Learning
             </Heading>
-            <Heading as="h2" variant="page-title-2" size="2xl">
+            <Heading as="h2" variant="page-title-secondary" size="2xl">
               Engineer
             </Heading>
             <Box

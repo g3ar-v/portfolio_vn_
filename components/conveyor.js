@@ -5,135 +5,139 @@ import { NextJS, Neovim, Css, ChakraUI, Framer } from '../components/svgs';
 function Conveyor() {
   return (
     <Box
-      display="grid"
-      alignContent="center"
-      overflow="hidden"
-      className={styles.belt}
-      minHeight="50vh"
-      // borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
+      display="flex"
+      flexDirection="column"
+      alignItems="flex-start"
+      pb="10px"
+      pt="80px"
+      maxW="1500px"
+      margin="auto"
+      maxH="50vh"
     >
+      <Heading as="h3" variant="page-title-mini" size="2xl">
+        Designed with...
+      </Heading>
       <Box
-        mb="60px"
-        display="block"
-        position="relative"
-        boxSizing="border-box"
-        left="170px"
-      >
-        <Heading as="h2" variant="page-tile" size="xl">
-          Designed with...
-        </Heading>
-      </Box>
-      <Box
-        display="flex"
-        flexDirection="column"
+        display="grid"
+        alignContent="center"
+        overflow="hidden"
+        className={styles.belt}
+        minHeight="20vh"
         margin="auto"
-        maxWidth="90vw"
-        className={styles.wrapper}
+        // borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
       >
-        <Box className={styles.marquee}>
-          <Box className={styles.marquee__group}>
-            <Container
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <svg>
-                <NextJS />
-              </svg>
-              <Text>nextJS</Text>
-            </Container>
-            <Container
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <svg>
-                <Neovim />
-              </svg>
-              <Text>neovim</Text>
-            </Container>
-            <Container
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <svg>
-                <Css />
-              </svg>
-              <Text>CSS</Text>
-            </Container>
-            <Container
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <svg>
-                <ChakraUI />
-              </svg>
-              <Text>chakra ui</Text>
-            </Container>
-            <Container
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <svg>
-                <Framer />
-              </svg>
-              <Text>framer motion</Text>
-            </Container>
-          </Box>
-          <Box className={styles.marquee__group}>
-            <Container
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <svg>
-                <NextJS />
-              </svg>
-              <Text>nextJS</Text>
-            </Container>
-            <Container
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <svg>
-                <Neovim />
-              </svg>
-              <Text>neovim</Text>
-            </Container>
-            <Container
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <svg>
-                <Css />
-              </svg>
-              <Text>CSS</Text>
-            </Container>
-            <Container
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <svg>
-                <ChakraUI />
-              </svg>
-              <Text>chakra ui</Text>
-            </Container>
-            <Container
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-            >
-              <svg>
-                <Framer />
-              </svg>
-              <Text>framer motion</Text>
-            </Container>
+        <Box
+          display="flex"
+          flexDirection="column"
+          margin="auto"
+          maxWidth="90vw"
+          className={styles.wrapper}
+        >
+          <Box className={styles.marquee}>
+            <Box className={styles.marquee__group}>
+              <Container
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <svg>
+                  <NextJS />
+                </svg>
+                <Text>nextJS</Text>
+              </Container>
+              <Container
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <svg>
+                  <Neovim />
+                </svg>
+                <Text>neovim</Text>
+              </Container>
+              <Container
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <svg>
+                  <Css />
+                </svg>
+                <Text>CSS</Text>
+              </Container>
+              <Container
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <svg>
+                  <ChakraUI />
+                </svg>
+                <Text>chakra ui</Text>
+              </Container>
+              <Container
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <svg>
+                  <Framer />
+                </svg>
+                <Text>framer motion</Text>
+              </Container>
+            </Box>
+            <Box className={styles.marquee__group}>
+              <Container
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <svg>
+                  <NextJS />
+                </svg>
+                <Text>nextJS</Text>
+              </Container>
+              <Container
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <svg>
+                  <Neovim />
+                </svg>
+                <Text>neovim</Text>
+              </Container>
+              <Container
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <svg>
+                  <Css />
+                </svg>
+                <Text>CSS</Text>
+              </Container>
+              <Container
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <svg>
+                  <ChakraUI />
+                </svg>
+                <Text>chakra ui</Text>
+              </Container>
+              <Container
+                display="flex"
+                flexDirection="column"
+                alignItems="center"
+              >
+                <svg>
+                  <Framer />
+                </svg>
+                <Text>framer motion</Text>
+              </Container>
+            </Box>
           </Box>
         </Box>
       </Box>

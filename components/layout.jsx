@@ -16,7 +16,7 @@ const Layout = (props) => {
       <LinkBar />
       <Box
         className="page"
-        height="2100.88px"
+        // height="2100.88px"
         boxSizing="border-box"
         display="block"
         flexGrow={1}
