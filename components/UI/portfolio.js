@@ -5,6 +5,7 @@ import React, { useEffect } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useState } from 'react';
 import routine from '../../public/routine.jpg';
+import timer from '../../public/timer.jpg';
 import machine from '../../public/machine.jpg';
 import attendance from '../../public/attendance.jpg';
 import dotfiles from '../../public/dotfile.jpeg';
@@ -18,6 +19,62 @@ if (typeof window !== 'undefined') {
 
 const Portfolio = () => {
   const portfolio_data = {
+    trevor: {
+      title: 't.r.e.v.o.r',
+      thumbnail: machine,
+      link: 'https://github.com/g3ar-v/trevor-core.git',
+      tags: [
+        {
+          name: 'ML',
+          icon: 'rebel'
+        },
+        {
+          name: 'Python',
+          icon: 'python'
+        },
+        {
+          name: 'Bash',
+          icon: 'linux'
+        }
+      ],
+      description:
+        'A personal assistant built for automation of mainly, development\
+      processes. It is built on top of mycroftAI. A modular sytem where each \
+      parts can be interchanged. As of 2023 there are two enclosures in use;\
+      Linux and raspberrypi. '
+    },
+    dotfiles: {
+      title: 'Dotfiles',
+      thumbnail: dotfiles,
+      link: 'https://github.com/g3ar-v/dot-files.git',
+      tags: ['Bash', 'Python', 'Raspberry Pi'],
+      tags: [
+        {
+          name: 'Bash',
+          icon: 'linux'
+        }
+      ],
+      description:
+        "Dotfiles for my Linux/Mac systems (.config/.conf). These are custom\
+      configurations made for various programs used across different OS's. The\
+      main setup to check out is my Neovim configuration. "
+    },
+    timer: {
+      title: 'timer skill',
+      thumbnail: timer,
+      link: 'https://github.com/g3ar-v/mycroft-timer.git',
+      tags: ['Bash', 'Python', 'Raspberry Pi'],
+      tags: [
+        {
+          name: 'Bash',
+          icon: 'linux'
+        }
+      ],
+      description:
+        'Display timer status using respeaker pixel ring light on T.R.E.V.O.R\
+      (raspberrypi enclosure)'
+    },
+
     notion: {
       title: 'Notion Routine Skill',
       thumbnail: routine,
@@ -34,33 +91,15 @@ const Portfolio = () => {
       ],
 
       description:
-        'A skill for mycroftAI that notifies you on what you are supposed to do at any time and times you have selected. Notion is used as the database and stores the goals.'
+        'A skill for mycroftAI that notifies you on what you are supposed to\
+      do at any time and times you have selected. Notion is used as the\
+      database and stores the goals.'
     },
-    trevor: {
-      title: 'T.r.e.v.o.r',
-      thumbnail: machine,
-      link: '#',
-      tags: [
-        {
-          name: 'ML',
-          icon: 'rebel'
-        },
-        {
-          name: 'Python',
-          icon: 'python'
-        },
-        {
-          name: 'Bash',
-          icon: 'linux'
-        }
-      ],
-      description:
-        'A personal assistant that can do many things. It is built on top of mycroftAI.'
-    },
+
     attendance: {
       title: 'Attendance System',
       thumbnail: attendance,
-      link: '#',
+      link: 'https://github.com/g3ar-v/UOBproject.git',
       tags: ['Raspberry Pi', 'React', 'NodeJS', 'Flask'],
       tags: [
         {
@@ -77,33 +116,9 @@ const Portfolio = () => {
         }
       ],
       description:
-        'A system that can take attendance using a Fingerprint and an rfid.'
-    },
-    dotfiles: {
-      title: 'Dotfiles',
-      thumbnail: dotfiles,
-      link: '#',
-      tags: ['Bash', 'Python', 'Raspberry Pi'],
-      tags: [
-        {
-          name: 'Bash',
-          icon: 'linux'
-        }
-      ],
-      description: 'My dotfiles for my Linux/Mac systems. '
-    },
-    xotfiles: {
-      title: 'Dotfiles',
-      thumbnail: dotfiles,
-      link: '#',
-      tags: ['Bash', 'Python', 'Raspberry Pi'],
-      tags: [
-        {
-          name: 'Bash',
-          icon: 'linux'
-        }
-      ],
-      description: 'My dotfiles for my Linux/Mac systems. '
+        'A system that can take attendance using a Fingerprint and an RFID.\
+      There are four main components of this system. The backend, the front-end,\
+      the raspberrypi and The database'
     }
   };
   const [activeIndex, setActiveIndex] = useState(null);
@@ -114,7 +129,8 @@ const Portfolio = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: false,
-    align: 'center'
+    align: 'start',
+    dragFree: true
   });
 
   useEffect(() => {
