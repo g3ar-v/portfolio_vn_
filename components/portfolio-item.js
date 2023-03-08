@@ -1,13 +1,5 @@
-import {
-  Box,
-  HStack,
-  // Text,
-  LinkBox,
-  // LinkOverlay,
-  Tag,
-  TagLabel
-} from '@chakra-ui/react';
-import Image from 'next/image';
+import { Box, Link, HStack, Text, Tag, TagLabel } from '@chakra-ui/react';
+import NextLink from 'next/link';
 import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -15,53 +7,30 @@ const PortfolioItem = ({
   tags,
   title,
   thumbnail,
-  // link,
+  link,
   description,
   className,
   onClick
 }) => {
   return (
-    <Box className={className} onClick={onClick}>
-      <LinkBox cursor="pointer">
-        <Image
-          src={thumbnail}
-          alt={title}
-          // className="grid-item-thumbnail"
-          // maxW="100%"
-          // border="0px"
-          // height={730}
-          placeholder="blur"
-          loading="lazy"
-        />
+    <Box
+      className={className}
+      onClick={onClick}
+      style={{ backgroundImage: `url(${thumbnail.src})` }}
+    >
+      <Box className={styles.item_desc}>
+        <Text as="h3" casing="uppercase" variant={'sub-heading'} mt={2} mb={2}>
+          {title}
+        </Text>
+        <p>{description}</p>
 
-        <Box className={styles.item_desc}>
-          {/* <LinkOverlay href={link} target="_blank">
-          <Text
-            casing="uppercase"
-            decoration="underline"
-            variant={'sub-heading'}
-            mt={2}
-          >
-            {title}
-          </Text>
-        </LinkOverlay>
-        */}
-          <p>{description}</p>
-          <HStack flexWrap="wrap" align="center" spacing={2} mt={2} ml={2}>
-            {tags.map((element, index) => (
-              <Tag key={index}>
-                <HStack mt="5px" ml="15px" mr="15px">
-                  <FontAwesomeIcon
-                    icon={['fab', `${element.icon}`]}
-                    size="sm"
-                  />
-                  <TagLabel ml={2}>{element.name}</TagLabel>
-                </HStack>
-              </Tag>
-            ))}
-          </HStack>
-        </Box>
-      </LinkBox>
+        <NextLink href={link} passHref>
+          <Link>
+            <FontAwesomeIcon icon={['fab', 'github-alt']} size="lg" /> source
+            code
+          </Link>
+        </NextLink>
+      </Box>
     </Box>
   );
 };

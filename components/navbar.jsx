@@ -10,7 +10,7 @@ const NAVLINK = [
 // { path: "#contact", display: "Contact" }
 const NavItem = ({ href, path, children }) => {
   const active = path === href;
-  const inactiveColor = useColorModeValue('teal', 'athsSpecial');
+  const inactiveColor = useColorModeValue('aqua', 'bayLeave');
 
   return (
     <NextLink href={href} passHref>

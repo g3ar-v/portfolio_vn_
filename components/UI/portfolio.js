@@ -1,12 +1,23 @@
 import { Box, Heading, useColorModeValue } from '@chakra-ui/react';
 import PortfolioItem from '../portfolio-item';
 // import portfolio_data from '../../data/portfolio_data.json';
-
+import React, { useEffect } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
 import { useState } from 'react';
 import routine from '../../public/routine.jpg';
 import machine from '../../public/machine.jpg';
 import attendance from '../../public/attendance.jpg';
+import dotfiles from '../../public/dotfile.jpeg';
 import styles from '../../styles/Home.module.css';
+import dynamic from 'next/dynamic';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
+
+// var $ = require('jquery');
+
+if (typeof window !== 'undefined') {
+  window.$ = window.jQuery = require('jquery');
+}
 
 const Portfolio = () => {
   const portfolio_data = {
@@ -29,12 +40,12 @@ const Portfolio = () => {
         'A skill for mycroftAI that notifies you on what you are supposed to do at any time and times you have selected. Notion is used as the database and stores the goals.'
     },
     trevor: {
-      title: 'Trevor',
+      title: 'T.r.e.v.o.r',
       thumbnail: machine,
       link: '#',
       tags: [
         {
-          name: 'Machine Learning',
+          name: 'ML',
           icon: 'rebel'
         },
         {
@@ -44,8 +55,7 @@ const Portfolio = () => {
         {
           name: 'Bash',
           icon: 'linux'
-        },
-        { name: 'MycroftAI', icon: 'rebel' }
+        }
       ],
       description:
         'A personal assistant that can do many things. It is built on top of mycroftAI.'
@@ -74,7 +84,7 @@ const Portfolio = () => {
     },
     dotfiles: {
       title: 'Dotfiles',
-      thumbnail: attendance,
+      thumbnail: dotfiles,
       link: '#',
       tags: ['Bash', 'Python', 'Raspberry Pi'],
       tags: [
@@ -82,77 +92,75 @@ const Portfolio = () => {
           name: 'Bash',
           icon: 'linux'
         }
-      ]
+      ],
+      description: 'My dotfiles for my Linux/Mac systems. '
+    },
+    xotfiles: {
+      title: 'Dotfiles',
+      thumbnail: dotfiles,
+      link: '#',
+      tags: ['Bash', 'Python', 'Raspberry Pi'],
+      tags: [
+        {
+          name: 'Bash',
+          icon: 'linux'
+        }
+      ],
+      description: 'My dotfiles for my Linux/Mac systems. '
     }
   };
-  const [isActive, setIsActive] = useState(false);
-  const handleCarouselClick = () => {
-    setIsActive((current) => !current);
-  };
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  function handleCarouselClick(index) {
+    setActiveIndex(index === activeIndex ? null : index);
+  }
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: 'center'
+  });
+
+  useEffect(() => {
+    if (emblaApi) {
+      console.log(emblaApi.slideNodes());
+    }
+  }, [emblaApi]);
+  const portfolioItems = Object.keys(portfolio_data);
   return (
-    <Box borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}>
+    <Box
+      id="#portfolio"
+      borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
+    >
       <Box
-        id="portfolio"
         pb="80px"
         pt="80px"
         display="flex"
         flexDirection="column"
         alignItems="flex-start"
-        boxSizing="border-box"
-        position="relative"
         maxW="1500px"
-        // mb="40px"
         margin="auto"
         height="872.328px"
       >
         <Heading as="h2" variant="page-title" size="2xl">
           Portfolio
         </Heading>
-        <Box
-          marginTop="-20px"
-          padding="60px 50px"
-          margin="15px 0"
-          display="flex"
-          position="relative"
-          z-index="5"
-          className="owl-carousel custom-carousel"
-        >
-          <PortfolioItem
-            tags={portfolio_data.notion.tags}
-            title={portfolio_data.notion.title}
-            thumbnail={portfolio_data.notion.thumbnail}
-            link={portfolio_data.notion.link}
-            description={portfolio_data.notion.description}
-            className={`${styles.item} ${isActive ? 'active' : ''}`}
-            onClick={handleCarouselClick}
-          />
-          <PortfolioItem
-            tags={portfolio_data.trevor.tags}
-            title={portfolio_data.trevor.title}
-            thumbnail={portfolio_data.trevor.thumbnail}
-            link={portfolio_data.trevor.link}
-            description={portfolio_data.trevor.description}
-            className={`${styles.item} ${isActive ? 'active' : ''}`}
-            onClick={handleCarouselClick}
-          />
-          <PortfolioItem
-            tags={portfolio_data.attendance.tags}
-            title={portfolio_data.attendance.title}
-            thumbnail={portfolio_data.attendance.thumbnail}
-            link={portfolio_data.attendance.link}
-            description={portfolio_data.attendance.description}
-            className={`${styles.item} ${isActive ? 'active' : ''}`}
-            onClick={handleCarouselClick}
-          />
-          <PortfolioItem
-            tags={portfolio_data.dotfiles.tags}
-            title={portfolio_data.dotfiles.title}
-            thumbnail={portfolio_data.dotfiles.thumbnail}
-            link={portfolio_data.dotfiles.link}
-            description={portfolio_data.dotfiles.description}
-            className={`${styles.item} ${isActive ? 'active' : ''}`}
-            onClick={handleCarouselClick}
-          />
+        <Box className="embla" ref={emblaRef}>
+          <Box padding="60px 30px" className="embla__container">
+            {portfolioItems.map((item, index) => (
+              <PortfolioItem
+                key={index}
+                tags={portfolio_data[item].tags}
+                title={portfolio_data[item].title}
+                thumbnail={portfolio_data[item].thumbnail}
+                link={portfolio_data[item].link}
+                description={portfolio_data[item].description}
+                className={`${styles.item} embla__slide ${
+                  activeIndex === index ? `${styles.active}` : ''
+                }`}
+                onClick={() => handleCarouselClick(index)}
+              />
+            ))}
+          </Box>
         </Box>
       </Box>
     </Box>

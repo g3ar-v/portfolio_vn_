@@ -30,11 +30,11 @@ const Logo = () => {
           <Text
             as="div"
             whiteSpace="pre-wrap"
-            color={useColorModeValue('blackMarlin', 'athsSpecial')}
+            color={useColorModeValue('blackMarlin', 'blackMarlin')}
             fontFamily="Plus Jakarta sans"
             fontWeight="700"
-            ml={3}
-            mb="5px"
+            ml={1}
+            mb="2px"
           >
             Victor Nyoyoko
           </Text>

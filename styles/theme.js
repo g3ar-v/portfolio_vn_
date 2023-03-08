@@ -18,32 +18,11 @@ const styles = {
 
 const baseStyle = definePartsStyle({
   container: {
-    borderRadius: '3px 0 0 3px',
-    display: 'inline-block',
-    height: '26px',
-    lineHeight: '11px',
-    padding: '0 20px 0 25px',
-    position: 'relative',
-    margin: ' 0 10px 10px 0',
-    textDecoration: 'none',
-    _before: {
-      bg: '#DBC8AC',
-      borderRadius: '10px',
-      boxShadow: 'inset 0 1px rgba(0, 0, 0, 1)',
-      content: "''",
-      height: '6px',
-      left: '10px',
-      position: 'absolute',
-      width: '6px',
-      top: '10px'
-    },
-
+    borderRadius: '3px',
+    margin: 'auto',
     _dark: {
-      backround: '#37393F',
-      _before: {
-        background: '#161616',
-        boxShadow: 'inset 0 1px rgba(79, 77, 82, 1)'
-      }
+      color: '#DBC8AC',
+      backround: 'transparent'
     }
   },
   label: defineStyle({
@@ -68,7 +47,7 @@ const components = {
         fontSize: 50,
         color: '#DBC8AC',
         textShadow: '10px 4px 10px #5C5A52',
-        _dark: { color: '#443737', textShadow: 'none' }
+        _dark: { color: '#a89984', textShadow: 'none' }
       },
       'page-title': {
         fontSize: 50,
@@ -92,7 +71,7 @@ const components = {
       },
       'outline-s': {
         fontSize: 30,
-        color: '#37393F'
+        color: '#504945'
       },
       'outline-p': {
         fontSize: 20,
@@ -103,10 +82,11 @@ const components = {
 
   Link: {
     baseStyle: (props) => ({
-      color: mode('#6D9886', '#DBC8AC')(props),
-      textUnderlineOffset: 3,
+      color: mode('#427b58', '#7F9F93')(props),
+      // textUnderlineOffset: 3,
       _hover: {
-        color: '#ED6C35'
+        color: '#af3a03',
+        textDecoration: 'none'
       }
     })
   },
@@ -125,8 +105,10 @@ const colors = {
   blackMarlin: '#37393F',
   athsSpecial: '#D8C9AF',
   teal: '#6D9886',
+  bayLeave: '#7F9F93',
   blue: '#1C3879',
-  grey: '#5C5A52'
+  grey: '#5C5A52',
+  aqua: '#427b58'
 };
 
 const config = {
