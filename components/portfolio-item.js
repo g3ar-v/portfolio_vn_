@@ -1,10 +1,10 @@
-import { Box, Link, HStack, Text, Tag, TagLabel } from '@chakra-ui/react';
+import { Box, Link, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const PortfolioItem = ({
-  tags,
+  // tags,
   title,
   thumbnail,
   link,

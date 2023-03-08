@@ -9,9 +9,6 @@ import machine from '../../public/machine.jpg';
 import attendance from '../../public/attendance.jpg';
 import dotfiles from '../../public/dotfile.jpeg';
 import styles from '../../styles/Home.module.css';
-import dynamic from 'next/dynamic';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 // var $ = require('jquery');
 
