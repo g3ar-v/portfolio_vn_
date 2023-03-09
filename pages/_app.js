@@ -2,6 +2,7 @@ import Fonts from '../components/fonts';
 import theme from '../styles/theme';
 import Layout from '../components/layout';
 import '../styles/carousel.css';
+import { Analytics } from '@vercel/analytics/react';
 import { ChakraProvider } from '@chakra-ui/react';
 
 function Website({ Component, pageProps }) {
@@ -10,6 +11,7 @@ function Website({ Component, pageProps }) {
       <Fonts />
       <Layout>
         <Component {...pageProps} />
+        <Analytics />
       </Layout>
     </ChakraProvider>
   );
