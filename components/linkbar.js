@@ -1,9 +1,27 @@
-import { Box, Flex, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Container, useColorModeValue } from '@chakra-ui/react';
 import NextLink from 'next/link';
+import styles from '../styles/Home.module.css';
 import ThemeToggleButton from './theme-toggle-button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const LinkBar = () => {
+  const links = {
+    instagram: {
+      link: 'https://www.instagram.com/vikt4r/',
+      icon: 'instagram'
+    },
+    twitter: {
+      link: 'https://github.com/g3ar-v/',
+      icon: 'github-alt'
+    },
+    spotify: {
+      link: 'https://open.spotify.com/user/frankjnr368',
+      icon: 'spotify'
+    }
+  };
+
+  const iconColor = useColorModeValue('#427b58', '#7F9F93');
+
   return (
     <Box
       display="block"
@@ -34,6 +52,7 @@ const LinkBar = () => {
         <Flex
           boxSizing="border-box"
           alignItems="center"
+          justifyContent="space-between"
           direction="column"
           position="absolute"
           top="747px"
@@ -41,30 +60,28 @@ const LinkBar = () => {
           left="0px"
           right="0px"
           pb="30px"
+          gap="20px"
         >
           <Flex
-            alignItems="stretch"
+            alignItems="center"
             direction="column"
-            mb="0px"
-            mt="0px"
-            justifyContent="space-between"
-            gap="10px"
+            // justifyContent="space-between"
+            // gap="10px"
+            // flexGrow="2"
           >
-            <NextLink
-              href="https://www.instagram.com/vikt4r/"
-              passHref
-              variant="baseStyle"
-            >
-              <FontAwesomeIcon icon={['fab', 'instagram']} size="xl" />
-            </NextLink>
-            <NextLink href="https://open.spotify.com/user/frankjnr368" passHref>
-              <FontAwesomeIcon icon={['fab', 'spotify']} size="xl" />
-            </NextLink>
-            <NextLink href="https://github.com/g3ar-v/" passHref>
-              <FontAwesomeIcon icon={['fab', 'github-alt']} size="xl" />
-            </NextLink>
-            <ThemeToggleButton />
+            {Object.keys(links).map((item, index) => (
+              <Container key={index} className={styles.links}>
+                <NextLink href={links[item].link} passHref>
+                  <FontAwesomeIcon
+                    icon={['fab', `${links[item].icon}`]}
+                    color={iconColor}
+                    size="lg"
+                  />
+                </NextLink>
+              </Container>
+            ))}
           </Flex>
+          <ThemeToggleButton />
         </Flex>
       </Box>
     </Box>
