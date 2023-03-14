@@ -1,13 +1,20 @@
 import NextLink from 'next/link';
 import Logo from './logo';
-import { Flex, Box, Link, Stack, useColorModeValue } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Box,
+  Link,
+  Stack,
+  useColorModeValue
+} from '@chakra-ui/react';
+// import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
 const NAVLINK = [
-  // { path: '#expertise', display: 'Expertise' },
-  { path: '#portfolio', display: 'Portfolio' }
+  { path: '#portfolio', display: 'Portfolio' },
+  { path: '#source', display: 'Source' }
 ];
 
-// { path: "#contact", display: "Contact" }
 const NavItem = ({ href, target, path, children }) => {
   const active = path === href;
   const inactiveColor = useColorModeValue('aqua', 'bayLeave');
@@ -23,7 +30,9 @@ const NavItem = ({ href, target, path, children }) => {
     </Link>
   );
 };
-
+const ContactButton = () => {
+  return <Button variant="outline">Contact</Button>;
+};
 export default function Navbar() {
   return (
     <Box
@@ -32,7 +41,6 @@ export default function Navbar() {
       zIndex={9999}
       left="0px"
       right="0px"
-      ml="80px"
       pl="60px"
       wrap="wrap"
       position="fixed"
@@ -41,7 +49,7 @@ export default function Navbar() {
       bottom="720px"
       bg={useColorModeValue('blackAlpha.100', 'blackAlpha.500')}
       justifyContent="space-between"
-      backdropFilter="blur(5px)"
+      backdropFilter="blur(16px)"
       top="0px"
       borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
     >
@@ -60,6 +68,7 @@ export default function Navbar() {
             </NavItem>
           ))}
         </Stack>
+        <ContactButton />
       </Flex>
     </Box>
   );

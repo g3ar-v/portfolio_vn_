@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>g3ar</title>
+        <title>Victor Nyoyoko</title>
         <meta name="description" content="Understanding Victor Nyoyoko" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

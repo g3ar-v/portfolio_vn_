@@ -28,7 +28,7 @@ const LinkBar = () => {
       position="sticky"
       height="100vh"
       direction="column"
-      top="0px"
+      top="80px"
       z-index={999}
       alignItems="center"
       justifyContent="flex-start"
@@ -39,14 +39,9 @@ const LinkBar = () => {
         display="flex"
         position="sticky"
         flexDirection="column"
-        pt="10px"
         alignItems="center"
         boxSizing="border-box"
-        mt="0px"
-        mb="0px"
-        z-index="2"
         width="80px"
-        height="887px"
         top="0px"
       >
         <Flex
@@ -54,21 +49,10 @@ const LinkBar = () => {
           alignItems="center"
           justifyContent="space-between"
           direction="column"
-          position="absolute"
-          top="747px"
-          bottom="0px"
-          left="0px"
-          right="0px"
-          pb="30px"
-          gap="20px"
+          position="relative"
+          top="650px"
         >
-          <Flex
-            alignItems="center"
-            direction="column"
-            // justifyContent="space-between"
-            // gap="10px"
-            // flexGrow="2"
-          >
+          <Flex alignItems="center" direction="column" mb="30px">
             {Object.keys(links).map((item, index) => (
               <Container key={index} className={styles.links}>
                 <NextLink href={links[item].link} passHref>

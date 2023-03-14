@@ -12,9 +12,9 @@ const Layout = (props) => {
       flexDirection="row"
       boxSizing="border-box"
     >
+      <Navbar />
       <LinkBar />
       <Box boxSizing="border-box" display="block" flexGrow={1} pt="80px">
-        <Navbar />
         <Box display="block" boxSizing="border-box">
           {props.children}
         </Box>

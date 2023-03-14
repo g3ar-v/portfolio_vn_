@@ -39,24 +39,65 @@ const components = {
   Heading: {
     variants: {
       'page-title-main': {
-        fontSize: 50,
+        sizes: {
+          sm: {
+            fontSize: 20
+          },
+          md: {
+            fontSize: 25
+          },
+          lg: {
+            fontSize: 50
+          }
+        },
         color: '#37393F',
         _dark: { color: '#37393F' }
       },
       'page-title-secondary': {
-        fontSize: 50,
+        sizes: {
+          sm: {
+            fontSize: 20
+          },
+          md: {
+            fontSize: 25
+          },
+          lg: {
+            fontSize: 50
+          }
+        },
         color: '#DBC8AC',
         textShadow: '10px 4px 10px #5C5A52',
         _dark: { color: '#a89984', textShadow: 'none' }
       },
       'page-title': {
-        fontSize: 50,
+        sizes: {
+          sm: {
+            fontSize: 20
+          },
+          md: {
+            fontSize: 25
+          },
+          lg: {
+            fontSize: 50
+          }
+        },
         color: '#37393F',
         marginLeft: '60px',
         _dark: { color: '#37393F' }
       },
       'page-title-mini': {
         fontSize: 30,
+        sizes: {
+          sm: {
+            fontSize: 10
+          },
+          md: {
+            fontSize: 15
+          },
+          lg: {
+            fontSize: 30
+          }
+        },
         color: '#37393F',
         _dark: { color: '#37393F' }
       }
@@ -90,7 +131,29 @@ const components = {
       }
     })
   },
-  Tag: tagTheme
+  Tag: tagTheme,
+  Button: {
+    variants: {
+      outline: {
+        color: '#427b58',
+        padding: '39px',
+        borderRadius: 0,
+        borderWidth: '2px',
+        borderColor: '#37393F',
+        _dark: {
+          color: '#7F9F93'
+        },
+        _hover: {
+          bg: '#ddcfb7',
+          color: '#af3a03',
+          _dark: {
+            color: '#af3a03',
+            bg: '#040404'
+          }
+        }
+      }
+    }
+  }
 };
 
 const fonts = {
@@ -111,10 +174,23 @@ const colors = {
   aqua: '#427b58'
 };
 
+const breakpoints = {
+  sm: '414px',
+  md: '584px',
+  lg: '1280px'
+};
+
 const config = {
   initialColorMode: 'dark',
   useSystemColorMode: true
 };
 
-const theme = extendTheme({ components, config, styles, fonts, colors });
+const theme = extendTheme({
+  breakpoints,
+  components,
+  config,
+  styles,
+  fonts,
+  colors
+});
 export default theme;
