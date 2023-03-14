@@ -9,9 +9,9 @@ function Website({ Component, pageProps }) {
   return (
     <ChakraProvider theme={theme}>
       <Fonts />
+      <Analytics />
       <Layout>
         <Component {...pageProps} />
-        <Analytics />
       </Layout>
     </ChakraProvider>
   );

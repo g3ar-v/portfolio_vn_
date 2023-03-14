@@ -8,14 +8,19 @@ const NAVLINK = [
 ];
 
 // { path: "#contact", display: "Contact" }
-const NavItem = ({ href, path, children }) => {
+const NavItem = ({ href, target, path, children }) => {
   const active = path === href;
   const inactiveColor = useColorModeValue('aqua', 'bayLeave');
 
   return (
-    <NextLink href={href} passHref>
-      <Link color={active ? 'blue' : inactiveColor}>{children}</Link>
-    </NextLink>
+    <Link
+      as={NextLink}
+      href={href}
+      color={active ? 'blue' : inactiveColor}
+      target={target}
+    >
+      {children}
+    </Link>
   );
 };
 
@@ -50,7 +55,7 @@ export default function Navbar() {
           mt={{ base: 4, md: 0 }}
         >
           {NAVLINK.map((item, index) => (
-            <NavItem href={item.path} forwardedAs={item.path} key={index}>
+            <NavItem href={item.path} key={index}>
               {item.display}
             </NavItem>
           ))}

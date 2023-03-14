@@ -11,19 +11,11 @@ const Layout = (props) => {
       alignItems="flex-start"
       flexDirection="row"
       boxSizing="border-box"
-      m="0px"
     >
       <LinkBar />
-      <Box
-        className="page"
-        // height="2100.88px"
-        boxSizing="border-box"
-        display="block"
-        flexGrow={1}
-        pt="80px"
-      >
+      <Box boxSizing="border-box" display="block" flexGrow={1} pt="80px">
         <Navbar />
-        <Box className="page-content" display="block" boxSizing="border-box">
+        <Box display="block" boxSizing="border-box">
           {props.children}
         </Box>
         <Footer />

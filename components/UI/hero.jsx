@@ -10,14 +10,6 @@ import {
 import styles from '../../styles/Home.module.css';
 import NextLink from 'next/link';
 
-const NLink = ({ children, href }) => {
-  return (
-    <NextLink href={href} passHref>
-      <Link>{children}</Link>
-    </NextLink>
-  );
-};
-
 const Hero = () => {
   return (
     <Box id="/" mb="40px" display="block" boxSizing="border-box">
@@ -72,7 +64,9 @@ const Hero = () => {
                 bg={useColorModeValue('whiteAlpha.300', 'whiteAlpha.200')}
                 css={{ backdropFilter: 'blur(10px)' }}
               >
-                <NLink href="#portfolio">ABOUT ME</NLink>
+                <Link as={NextLink} href="#portfolio" passHref>
+                  ABOUT ME
+                </Link>
               </Box>
             </Box>
           </Container>

@@ -1,13 +1,21 @@
-import { Box, Link, Text } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import {
+  Box,
+  Highlight,
+  Link,
+  LinkBox,
+  LinkOverlay,
+  Text
+} from '@chakra-ui/react';
 import styles from '../styles/Home.module.css';
+import NextLink from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const PortfolioItem = ({
   // tags,
+  highlight,
   title,
   thumbnail,
-  link,
+  href,
   description,
   className,
   onClick
@@ -22,14 +30,18 @@ const PortfolioItem = ({
         <Text as="h3" casing="uppercase" variant={'sub-heading'} mt={2} mb={2}>
           {title}
         </Text>
-        <p>{description}</p>
+        <p>
+          <Highlight query={highlight} styles={{ color: 'yellow.500' }}>
+            {description}
+          </Highlight>
+        </p>
 
-        <NextLink href={link} passHref>
-          <Link>
+        <LinkBox>
+          <LinkOverlay as={Link} href={href} target="_blank">
             <FontAwesomeIcon icon={['fab', 'github-alt']} size="lg" /> source
             code
-          </Link>
-        </NextLink>
+          </LinkOverlay>
+        </LinkBox>
       </Box>
     </Box>
   );

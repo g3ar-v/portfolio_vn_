@@ -1,5 +1,9 @@
-import Link from 'next/link';
-import { Text, useColorModeValue } from '@chakra-ui/react';
+import {
+  Text,
+  LinkBox,
+  LinkOverlay,
+  useColorModeValue
+} from '@chakra-ui/react';
 import FootprintIcon from './gear';
 import styled from '@emotion/styled';
 
@@ -23,8 +27,8 @@ const LogoBox = styled.span`
 
 const Logo = () => {
   return (
-    <Link href="/">
-      <a>
+    <LinkBox>
+      <LinkOverlay>
         <LogoBox>
           <FootprintIcon />
           <Text
@@ -39,8 +43,8 @@ const Logo = () => {
             Victor Nyoyoko
           </Text>
         </LogoBox>
-      </a>
-    </Link>
+      </LinkOverlay>
+    </LinkBox>
   );
 };
 

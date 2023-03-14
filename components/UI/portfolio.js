@@ -37,6 +37,7 @@ const Portfolio = () => {
           icon: 'linux'
         }
       ],
+      highlight: ['automation', 'mycroftAI'],
       description:
         'A personal assistant built for automation of mainly, development\
       processes. It is built on top of mycroftAI. A modular sytem where each \
@@ -54,6 +55,7 @@ const Portfolio = () => {
           icon: 'linux'
         }
       ],
+      highlight: ['Neovim'],
       description:
         "Dotfiles for my Linux/Mac systems (.config/.conf). These are custom\
       configurations made for various programs used across different OS's. The\
@@ -70,6 +72,7 @@ const Portfolio = () => {
           icon: 'linux'
         }
       ],
+      highlight: ['T.R.E.V.O.R'],
       description:
         'Display timer status using respeaker pixel ring light on T.R.E.V.O.R\
       (raspberrypi enclosure)'
@@ -90,6 +93,7 @@ const Portfolio = () => {
         }
       ],
 
+      highlight: ['mycroftAI'],
       description:
         'A skill for mycroftAI that notifies you on what you are supposed to\
       do at any time and times you have selected. Notion is used as the\
@@ -115,6 +119,7 @@ const Portfolio = () => {
           icon: 'node-js'
         }
       ],
+      highlight: ['system'],
       description:
         'A system that can take attendance using a Fingerprint and an RFID.\
       There are four main components of this system. The backend, the front-end,\
@@ -162,10 +167,11 @@ const Portfolio = () => {
             {portfolioItems.map((item, index) => (
               <PortfolioItem
                 key={index}
+                highlight={portfolio_data[item].highlight}
                 tags={portfolio_data[item].tags}
                 title={portfolio_data[item].title}
                 thumbnail={portfolio_data[item].thumbnail}
-                link={portfolio_data[item].link}
+                href={portfolio_data[item].link}
                 description={portfolio_data[item].description}
                 className={`${styles.item} embla__slide ${
                   activeIndex === index ? `${styles.active}` : ''

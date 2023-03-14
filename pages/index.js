@@ -13,9 +13,11 @@ export default function Home() {
         <meta name="description" content="Understanding Victor Nyoyoko" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero />
-      <Portfolio />
-      <Conveyor />
+      <div>
+        <Hero />
+        <Portfolio />
+        <Conveyor />
+      </div>
     </>
   );
 }
