@@ -7,7 +7,6 @@ import {
   Text
 } from '@chakra-ui/react';
 import styles from '../styles/Home.module.css';
-import NextLink from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const PortfolioItem = ({
