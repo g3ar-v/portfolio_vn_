@@ -24,11 +24,11 @@ const LinkBar = () => {
 
   return (
     <Box
-      display="block"
+      display={{ base: 'none', md: 'block' }}
       position="sticky"
       height="100vh"
       direction="column"
-      top="80px"
+      top="60px"
       z-index={999}
       alignItems="center"
       justifyContent="flex-start"
@@ -41,8 +41,9 @@ const LinkBar = () => {
         flexDirection="column"
         alignItems="center"
         boxSizing="border-box"
-        width="80px"
+        // width="80px"
         top="0px"
+        m={3}
       >
         <Flex
           boxSizing="border-box"
@@ -55,7 +56,7 @@ const LinkBar = () => {
           <Flex alignItems="center" direction="column" mb="30px">
             {Object.keys(links).map((item, index) => (
               <Container key={index} className={styles.links}>
-                <NextLink href={links[item].link} passHref>
+                <NextLink href={links[item].link} target="_blank" passHref>
                   <FontAwesomeIcon
                     icon={['fab', `${links[item].icon}`]}
                     color={iconColor}

@@ -1,3 +1,4 @@
+import { useColorModeValue } from '@chakra-ui/react';
 const NextJS = () => {
   return (
     <svg
@@ -64,4 +65,28 @@ const Framer = () => {
     </svg>
   );
 };
-export { NextJS, Framer, Neovim, Css, ChakraUI };
+
+const ExtLink = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 128 128"
+      width="20px"
+      height="20px"
+    >
+      <path
+        fill={`${useColorModeValue('#DED2BC', '#282828')}`}
+        d="M94,114H34c-11.05,0-20-8.95-20-20V34c0-11.05,8.95-20,20-20h60c11.05,0,20,8.95,20,20v60 C114,105.05,105.05,114,94,114z"
+      />
+      <path
+        fill="#444b54"
+        d="M94,117H34c-12.68,0-23-10.32-23-23V34c0-12.68,10.32-23,23-23h50c1.66,0,3,1.34,3,3s-1.34,3-3,3H34 c-9.37,0-17,7.63-17,17v60c0,9.37,7.63,17,17,17h60c9.37,0,17-7.63,17-17V44c0-1.66,1.34-3,3-3s3,1.34,3,3v50 C117,106.68,106.68,117,94,117z"
+      />
+      <path
+        fill={`${useColorModeValue('#427b58', '#71c2ff')}`}
+        d="M64,67c-0.77,0-1.54-0.29-2.12-0.88c-1.17-1.17-1.17-3.07,0-4.24l60-60c1.17-1.17,3.07-1.17,4.24,0 c1.17,1.17,1.17,3.07,0,4.24l-60,60C65.54,66.71,64.77,67,64,67z"
+      />
+    </svg>
+  );
+};
+export { NextJS, Framer, Neovim, Css, ChakraUI, ExtLink };

@@ -1,3 +1,4 @@
+import { useColorModeValue } from '@chakra-ui/react';
 const GearIcon = () => {
   return (
     <svg
@@ -6,8 +7,8 @@ const GearIcon = () => {
       height={40}
       fill="none"
       viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="#37393F"
+      // strokeWidth={1.5}
+      stroke={`${useColorModeValue('#37393F', '#757575')}`}
       className="w-6 h-6"
     >
       <path

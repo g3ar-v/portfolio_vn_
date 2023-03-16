@@ -8,11 +8,12 @@ function Conveyor() {
       display="flex"
       flexDirection="column"
       alignItems="flex-start"
-      pb="10px"
-      pt="80px"
-      maxW="1500px"
-      margin="auto"
-      maxH="50vh"
+      // pb="10px"
+      // pt="80px"
+      // maxW="1500px"
+      maxWidth="80vw"
+      m={{ base: '30px', md: '40px' }}
+      minH="20vh"
     >
       <Heading as="h3" variant="page-title-mini" size="2xl">
         Designed with...
@@ -23,14 +24,15 @@ function Conveyor() {
         overflow="hidden"
         className={styles.belt}
         minHeight="20vh"
-        margin="auto"
+        // margin="auto"
         // borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
       >
         <Box
           display="flex"
           flexDirection="column"
-          margin="auto"
-          maxWidth="90vw"
+          // margin="auto"
+          // maxWidth="90vw"
+          width={{ base: 'sm', md: '87vw' }}
           className={styles.wrapper}
         >
           <Box className={styles.marquee}>

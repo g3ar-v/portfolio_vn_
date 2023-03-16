@@ -1,7 +1,7 @@
 .embla {
   overflow: hidden;
   position: relative;
-  width: 1500px;
+  /* width: 1500px; */
 }
 .embla__container {
   display: flex;

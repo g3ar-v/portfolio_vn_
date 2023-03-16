@@ -39,67 +39,32 @@ const components = {
   Heading: {
     variants: {
       'page-title-main': {
-        sizes: {
-          sm: {
-            fontSize: 20
-          },
-          md: {
-            fontSize: 25
-          },
-          lg: {
-            fontSize: 50
-          }
-        },
         color: '#37393F',
         _dark: { color: '#37393F' }
       },
       'page-title-secondary': {
-        sizes: {
-          sm: {
-            fontSize: 20
-          },
-          md: {
-            fontSize: 25
-          },
-          lg: {
-            fontSize: 50
-          }
-        },
-        color: '#DBC8AC',
+        color: '#EDE3D4',
         textShadow: '10px 4px 10px #5C5A52',
         _dark: { color: '#a89984', textShadow: 'none' }
       },
       'page-title': {
-        sizes: {
-          sm: {
-            fontSize: 20
-          },
-          md: {
-            fontSize: 25
-          },
-          lg: {
-            fontSize: 50
-          }
-        },
         color: '#37393F',
-        marginLeft: '60px',
         _dark: { color: '#37393F' }
       },
       'page-title-mini': {
-        fontSize: 30,
-        sizes: {
-          sm: {
-            fontSize: 10
-          },
-          md: {
-            fontSize: 15
-          },
-          lg: {
-            fontSize: 30
-          }
-        },
         color: '#37393F',
         _dark: { color: '#37393F' }
+      }
+    },
+    sizes: {
+      sm: {
+        fontSize: 'sm'
+      },
+      md: {
+        fontSize: '2xl'
+      },
+      lg: {
+        fontSize: '2xl'
       }
     }
   },
@@ -111,12 +76,22 @@ const components = {
         lineHeight: '1.5'
       },
       'outline-s': {
-        fontSize: 30,
         color: '#504945'
       },
       'outline-p': {
         fontSize: 20,
         color: mode('#37393F', '#5C5A52')
+      }
+    },
+    sizes: {
+      sm: {
+        fontSize: 'lg'
+      },
+      md: {
+        fontSize: 'xl'
+      },
+      lg: {
+        fontSize: '2xl'
       }
     }
   },
@@ -134,7 +109,7 @@ const components = {
   Tag: tagTheme,
   Button: {
     variants: {
-      outline: {
+      'contact-button': {
         color: '#427b58',
         padding: '39px',
         borderRadius: 0,
@@ -175,9 +150,11 @@ const colors = {
 };
 
 const breakpoints = {
-  sm: '414px',
-  md: '584px',
-  lg: '1280px'
+  // sm: '375px',
+  // md: '584px',
+  // lg: '1280px',
+  // xl: '1200px',
+  // '2xl': '1536px'
 };
 
 const config = {

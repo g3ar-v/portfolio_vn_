@@ -1,15 +1,10 @@
-import {
-  Text,
-  LinkBox,
-  LinkOverlay,
-  useColorModeValue
-} from '@chakra-ui/react';
+import { Text, useColorModeValue, Link } from '@chakra-ui/react';
 import GearIcon from './gear';
 import styled from '@emotion/styled';
 
 const LogoBox = styled.span`
   font-weight: 700;
-  font-size: 20px;
+  font-size: 18px;
   display: inline-flex;
   align-items: center;
   height: 30px;
@@ -17,34 +12,29 @@ const LogoBox = styled.span`
   padding: 10px;
 
   > svg {
-    transition: 200ms ease;
+    transition: 400ms ease;
   }
 
   &:hover > svg {
-    transform: rotate(40deg);
+    transform: rotate(60deg);
   }
 `;
 
 const Logo = () => {
   return (
-    <LinkBox>
+    <Link href="/">
       <LogoBox>
         <GearIcon />
-        <LinkOverlay href="/">
-          <Text
-            as="div"
-            whiteSpace="pre-wrap"
-            color={useColorModeValue('blackMarlin', 'blackMarlin')}
-            fontFamily="Plus Jakarta sans"
-            fontWeight="700"
-            ml={1}
-            mb="2px"
-          >
-            Victor Nyoyoko
-          </Text>
-        </LinkOverlay>
+        <Text
+          color={useColorModeValue('blackMarlin', 'sonicSilver')}
+          fontFamily="Plus Jakarta sans"
+          fontWeight="700"
+          ml={1}
+        >
+          Victor Nyoyoko
+        </Text>
       </LogoBox>
-    </LinkBox>
+    </Link>
   );
 };
 

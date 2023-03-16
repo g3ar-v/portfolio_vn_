@@ -1,7 +1,7 @@
-import { Box, Heading, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Heading, useColorModeValue } from '@chakra-ui/react';
 import PortfolioItem from '../portfolio-item';
 // import portfolio_data from '../../data/portfolio_data.json';
-import React, { useEffect } from 'react';
+import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useState } from 'react';
 import routine from '../../public/routine.jpg';
@@ -72,7 +72,7 @@ const Portfolio = () => {
           icon: 'linux'
         }
       ],
-      highlight: ['T.R.E.V.O.R'],
+      highlight: ['T.R.E.V.O.R', '(raspberrypi enclosure)'],
       description:
         'Display timer status using respeaker pixel ring light on T.R.E.V.O.R\
       (raspberrypi enclosure)'
@@ -132,37 +132,31 @@ const Portfolio = () => {
     setActiveIndex(index === activeIndex ? null : index);
   }
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
+  const [emblaRef] = useEmblaCarousel({
     loop: false,
     align: 'start',
     dragFree: true
   });
 
-  useEffect(() => {
-    if (emblaApi) {
-      console.log(emblaApi.slideNodes());
-    }
-  }, [emblaApi]);
   const portfolioItems = Object.keys(portfolio_data);
   return (
     <Box
       id="#portfolio"
       borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
     >
-      <Box
-        pb="80px"
-        pt="80px"
-        display="flex"
-        flexDirection="column"
+      <Flex
+        direction="column"
         alignItems="flex-start"
-        maxW="1500px"
-        margin="auto"
-        height="872.328px"
+        m={{ base: '30px', md: '40px' }}
       >
         <Heading as="h2" variant="page-title" size="2xl">
           Portfolio
         </Heading>
-        <Box className="embla" ref={emblaRef}>
+        <Box
+          className="embla"
+          ref={emblaRef}
+          width={{ base: 'sm', md: '87vw' }}
+        >
           <Box padding="60px 30px" className="embla__container">
             {portfolioItems.map((item, index) => (
               <PortfolioItem
@@ -181,7 +175,7 @@ const Portfolio = () => {
             ))}
           </Box>
         </Box>
-      </Box>
+      </Flex>
     </Box>
   );
 };
