@@ -29,7 +29,7 @@ const Hero = () => {
         alignItems="center"
       >
         <Box
-          maxW={{ base: 'full', md: 'fit-content' }}
+          maxW={{ base: 'full', md: '500px' }}
           // borderRight={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
         >
           <Heading as="h2" variant="page-title-main" size="2xl">
@@ -43,12 +43,13 @@ const Hero = () => {
           </Heading>
           <Box position="relative" display="block" boxSizing="border-box">
             <Text variant="outline-s" size="md" mb="31px" mt="30px">
-              I design pipelines, choose models for training data, evaluate,
-              train & fine-tune these models.
+              A machine learning researcher and software practitioner. I design
+              pipelines, choose models for training data, evaluate, train &
+              fine-tune these models.
             </Text>
             <Text variant="outline-s" size="md" mb="31px">
-              The aim is to solve real-world problems with Machine Learning and
-              to contribute to this new era.
+              The aim is to enhance productivity and quality of life by
+              addresing real-world problems with Machine Learning & Software
             </Text>
             <Box
               borderRadius="lg"

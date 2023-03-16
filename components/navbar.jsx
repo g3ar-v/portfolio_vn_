@@ -44,7 +44,7 @@ const NavItem = ({ href, target, path, children, ...props }) => {
   );
 };
 const ContactButton = () => {
-  return <Button variant="outline">Contact</Button>;
+  return <Button variant="contact-button">Contact</Button>;
 };
 
 const MenuLink = forwardRef((props, ref) => (

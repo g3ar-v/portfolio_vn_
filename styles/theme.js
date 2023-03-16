@@ -111,8 +111,6 @@ const components = {
     variants: {
       'contact-button': {
         color: '#427b58',
-        padding: '39px',
-        borderRadius: 0,
         borderWidth: '2px',
         borderColor: '#37393F',
         _dark: {
