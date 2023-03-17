@@ -14,16 +14,15 @@ import {
   IconButton,
   useColorModeValue,
   Heading,
-  Container,
-  Spacer
+  Container
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import ThemeToggleButton from './theme-toggle-button';
+import { IoLogoGithub } from 'react-icons/io5';
 
 const NAVLINK = [
   { path: '#portfolio', display: 'Portfolio' },
-  { path: '#about', display: 'About me' },
-  { path: '#source', display: 'Source' }
+  { path: '#about', display: 'About me' }
 ];
 
 const NavItem = ({ href, target, path, children, ...props }) => {
@@ -68,9 +67,9 @@ export default function Navbar(props) {
         display="flex"
         p={2}
         m={0}
-        maxW={{ base: '100%', xl: '100%' }}
+        maxW={{ base: 'full', xl: '100%' }}
         align="center"
-        justify="space-between"
+        justifyContent="space-between"
         {...props}
       >
         <Flex align="center" mr={5}>
@@ -83,6 +82,7 @@ export default function Navbar(props) {
           mr={0}
           width={{ base: null, md: '250vh' }}
           display={{ base: 'none', md: 'flex' }}
+          // alignSelf="self-end"
         >
           <Stack
             direction={{ base: null, md: 'row' }}
@@ -97,12 +97,28 @@ export default function Navbar(props) {
                 {item.display}
               </NavItem>
             ))}
+            <NavItem
+              href="https://github.com/g3ar-v/g3arzportfolio.git"
+              display="inline-flex"
+              path={path}
+              gap={2}
+              alignItems="center"
+              pl={2}
+            >
+              <IoLogoGithub /> View Source
+            </NavItem>
           </Stack>
           <ContactButton />
         </Container>
 
-        <Spacer />
-        <Flex flex={1} direction="row" align="right" gap={5}>
+        <Box
+          // flex={1}
+          direction="row"
+          align="flex-end"
+          justify="space-around"
+          gap={5}
+          display={{ base: 'flex', md: 'none' }}
+        >
           <Box display={{ base: 'inline-block', md: 'none' }}>
             <ThemeToggleButton />
           </Box>
@@ -130,7 +146,7 @@ export default function Navbar(props) {
               </MenuList>
             </Menu>
           </Box>
-        </Flex>
+        </Box>
       </Container>
     </Box>
   );

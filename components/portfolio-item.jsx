@@ -2,6 +2,10 @@ import {
   Box,
   Highlight,
   Link,
+  Flex,
+  HStack,
+  Tag,
+  TagLabel,
   LinkBox,
   LinkOverlay,
   Text
@@ -10,7 +14,7 @@ import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const PortfolioItem = ({
-  // tags,
+  tags,
   highlight,
   title,
   thumbnail,
@@ -34,11 +38,20 @@ const PortfolioItem = ({
             {description}
           </Highlight>
         </p>
-
+        <Flex align="flex-start" gap={{ base: 3, md: 10 }} wrap="wrap" m={1}>
+          {tags.map((element, index) => (
+            <Tag variant="outline" key={index}>
+              <HStack>
+                <FontAwesomeIcon icon={['fab', `${element.icon}`]} size="sm" />
+                <TagLabel>{element.name.toLowerCase()}</TagLabel>
+              </HStack>
+            </Tag>
+          ))}
+        </Flex>
         <LinkBox>
           <LinkOverlay as={Link} href={href} target="_blank">
-            <FontAwesomeIcon icon={['fab', 'github-alt']} size="lg" /> source
-            code
+            <FontAwesomeIcon icon={['fab', 'github-alt']} size="lg" /> learn
+            more...
           </LinkOverlay>
         </LinkBox>
       </Box>

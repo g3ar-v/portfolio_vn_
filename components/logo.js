@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 const LogoBox = styled.span`
   font-weight: 700;
-  font-size: 18px;
+  font-size: 25px;
   display: inline-flex;
   align-items: center;
   height: 30px;
@@ -22,7 +22,7 @@ const LogoBox = styled.span`
 
 const Logo = () => {
   return (
-    <Link href="/">
+    <Link href="#">
       <LogoBox>
         <GearIcon />
         <Text

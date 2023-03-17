@@ -18,18 +18,15 @@ const styles = {
 
 const baseStyle = definePartsStyle({
   container: {
-    borderRadius: '3px',
-    margin: 'auto',
+    padding: '10px',
+    // width: 'fit-content',
+    borderRadius: '6px',
     _dark: {
-      color: '#DBC8AC',
       backround: 'transparent'
     }
   },
   label: defineStyle({
-    color: '#DBC8AC',
-    _dark: {
-      color: '#DBC8AC'
-    }
+    _dark: {}
   })
 });
 
