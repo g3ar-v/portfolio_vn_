@@ -3,6 +3,7 @@ import PortfolioItem from '../portfolio-item';
 import data from '../portfolio-data';
 import React, { useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 import {
   DotButton,
   NextButton,
@@ -17,17 +18,20 @@ import styles from '../../styles/Home.module.css';
 // }
 
 const Portfolio = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   function handleCarouselClick(index) {
     setActiveIndex(index === activeIndex ? null : index);
   }
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: false,
-    align: 'start',
-    dragFree: true
-  });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: false,
+      align: 'start',
+      dragFree: true
+    },
+    [Autoplay()]
+  );
 
   const scrollPrev = useCallback(
     () => emblaApi && emblaApi.scrollPrev(),

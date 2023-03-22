@@ -2,7 +2,6 @@ import NextLink from 'next/link';
 import { forwardRef } from 'react';
 import Logo from './logo';
 import {
-  Button,
   Flex,
   Box,
   Link,
@@ -22,7 +21,8 @@ import { IoLogoGithub } from 'react-icons/io5';
 
 const NAVLINK = [
   { path: '#portfolio', display: 'Portfolio' },
-  { path: '#about', display: 'About me' }
+  { path: '#about', display: 'About' },
+  { path: '#contact', display: 'Contact' }
 ];
 
 const NavItem = ({ href, target, path, children, ...props }) => {
@@ -41,9 +41,6 @@ const NavItem = ({ href, target, path, children, ...props }) => {
       {children}
     </Link>
   );
-};
-const ContactButton = () => {
-  return <Button variant="contact-button">Contact</Button>;
 };
 
 const MenuLink = forwardRef((props, ref) => (
@@ -90,7 +87,7 @@ export default function Navbar(props) {
             width={{ base: 'full', md: 'auto' }}
             flexGrow={1}
             mt={{ base: 4, md: 0 }}
-            gap={20}
+            gap={10}
           >
             {NAVLINK.map((item, index) => (
               <NavItem href={item.path} path={path} key={index}>
@@ -108,7 +105,7 @@ export default function Navbar(props) {
               <IoLogoGithub /> View Source
             </NavItem>
           </Stack>
-          <ContactButton />
+          <ThemeToggleButton />
         </Container>
 
         <Box

@@ -16,7 +16,8 @@ const Hero = () => {
       id="/"
       pb={10}
       m={{ base: '30px', md: '30px 0px' }}
-      minH={{ base: '90vh', md: '0vh' }}
+      // minH={{ base: '90vh', md: '0vh' }}
+      h="calc(90vh)"
       // maxW={{ base: 'auto', xl: '1200px' }}
       borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
     >
@@ -60,7 +61,7 @@ const Hero = () => {
             >
               <Link as={NextLink} href="#portfolio" passHref>
                 <Flex align="center" gap={2}>
-                  <Text fontSize="md">ABOUT ME</Text>
+                  <Text fontSize="md">MORE...</Text>
                   <Box>
                     <ExtLink />
                   </Box>

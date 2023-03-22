@@ -9,7 +9,9 @@ import {
   faRebel,
   faRaspberryPi,
   faLinux,
-  faNodeJs
+  faNodeJs,
+  faLinkedin,
+  faTwitter
 } from '@fortawesome/free-brands-svg-icons';
 
 config.autoAddCss = false;
@@ -23,5 +25,7 @@ library.add(
   faPython,
   faRaspberryPi,
   faSpotify,
-  faGithubAlt
+  faGithubAlt,
+  faLinkedin,
+  faTwitter
 );

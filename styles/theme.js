@@ -106,18 +106,17 @@ const components = {
   Tag: tagTheme,
   Button: {
     variants: {
-      'contact-button': {
-        color: '#427b58',
+      'submit-button': {
+        backgroundColor: '#427b58',
+        color: 'white',
         borderWidth: '2px',
-        borderColor: '#37393F',
         _dark: {
-          color: '#7F9F93'
+          backgroundColor: '#7F9F93',
+          color: 'white'
         },
         _hover: {
           bg: '#ddcfb7',
-          color: '#af3a03',
           _dark: {
-            color: '#af3a03',
             bg: '#040404'
           }
         }

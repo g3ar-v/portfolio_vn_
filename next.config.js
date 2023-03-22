@@ -13,6 +13,17 @@ module.exports = {
         'window.jQuery': 'jquery'
       })
     );
+    config.resolve.fallback = {
+      fs: false
+      //   net: false,
+      //   dns: false,
+      //   tls: false,
+      //   assert: false,
+      //   path: false,
+      //   events: false,
+      //   process: false
+    };
+
     return config;
   }
 };
