@@ -27,29 +27,30 @@ const LinkBar = () => {
     }
   };
 
-  const iconColor = useColorModeValue('#427b58', '#7F9F93');
+  const iconColor = useColorModeValue('#427b58', '#757575');
 
   return (
     <Box
-      display={{ base: 'none', md: 'block' }}
+      display={{ base: 'none', md: 'flex' }}
       position="sticky"
       height="100vh"
       direction="column"
-      top="60px"
+      top="50px"
+      bottom="0"
       z-index={999}
-      alignItems="center"
-      justifyContent="flex-start"
+      justifyContent="flex-end" // Changed from 'space-around' to 'flex-end' to move the icons to the bottom
+      alignItems="flex-end"
       boxSizing="border-box"
+      // pb="20px"
       borderRight={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
     >
       <Box
-        display="flex"
+        display="block"
         position="sticky"
+        bottom="20px"
         flexDirection="column"
         alignItems="center"
         boxSizing="border-box"
-        // width="80px"
-        top="0px"
         m={3}
       >
         <Flex
@@ -58,7 +59,6 @@ const LinkBar = () => {
           justifyContent="space-between"
           direction="column"
           position="relative"
-          top="650px"
         >
           {Object.keys(links).map((item, index) => (
             <Container key={index} className={styles.links}>
@@ -67,6 +67,8 @@ const LinkBar = () => {
                   icon={['fab', `${links[item].icon}`]}
                   color={iconColor}
                   size="lg"
+                // style={{ transition: 'transform 0.3s ease-in-out' }}
+                // _hover={{ transform: 'scale(1.2)' }}
                 />
               </NextLink>
             </Container>
