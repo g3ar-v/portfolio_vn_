@@ -11,6 +11,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const styles = {
   global: (props) => ({
     'html, body': {
+      scrollBehavior: "smooth",
       bg: mode('#DBC8AC', '#161616')(props)
     }
   })
@@ -35,14 +36,17 @@ const tagTheme = defineMultiStyleConfig({ baseStyle });
 const components = {
   Heading: {
     variants: {
+      'page-title-secondary': {
+        color: '#757575',
+        _dark: { color: '#757575' }
+      },
       'page-title-main': {
         color: '#37393F',
-        _dark: { color: '#37393F' }
-      },
-      'page-title-secondary': {
-        color: '#EDE3D4',
-        textShadow: '10px 4px 10px #5C5A52',
-        _dark: { color: '#a89984', textShadow: 'none' }
+
+        lineHeight: "1.0em",
+        // fontWeight: '800',
+        // textShadow: '10px 4px 10px #5C5A52',
+        _dark: { color: '#F3F3F3', textShadow: 'none' }
       },
       'page-title': {
         color: '#37393F',
@@ -61,7 +65,7 @@ const components = {
         fontSize: '2xl'
       },
       lg: {
-        fontSize: '2xl'
+        fontSize: '3xl'
       }
     }
   },
@@ -72,8 +76,18 @@ const components = {
         textUnderlineOffset: '3px',
         lineHeight: '1.5'
       },
+      'date-heading': {
+        fontWeight: 'bold',
+        color: '#b98929',
+        textUnderlineOffset: '3px',
+        lineHeight: '1.5'
+      },
       'outline-s': {
-        color: '#504945'
+        fontFamily: "Inter",
+        'outline-s': {
+          fontFamily: "Inter",
+          color: mode('#37393F', '#F3F3F3')
+        },
       },
       'outline-p': {
         fontSize: 20,
@@ -95,10 +109,10 @@ const components = {
 
   Link: {
     baseStyle: (props) => ({
-      color: mode('#427b58', '#7F9F93')(props),
+      color: mode('#129761', '#7F9F93')(props),
       // textUnderlineOffset: 3,
       _hover: {
-        color: '#af3a03',
+        color: mode('#f3f3f3', '#f3f3f3')(props),
         textDecoration: 'none'
       }
     })
@@ -144,7 +158,7 @@ const colors = {
 };
 
 const breakpoints = {
-  // sm: '375px',
+  // sm: '175px',
   // md: '584px',
   // lg: '1280px',
   // xl: '1200px',

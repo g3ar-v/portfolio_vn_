@@ -75,7 +75,7 @@ const ExtLink = () => {
       height="20px"
     >
       <path
-        fill={`${useColorModeValue('#DED2BC', '#282828')}`}
+        fill={`${useColorModeValue('#282420', '#282828')}`}
         d="M94,114H34c-11.05,0-20-8.95-20-20V34c0-11.05,8.95-20,20-20h60c11.05,0,20,8.95,20,20v60 C114,105.05,105.05,114,94,114z"
       />
       <path

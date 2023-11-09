@@ -1,5 +1,8 @@
-import { Box, Flex, Container, useColorModeValue } from '@chakra-ui/react';
-import NextLink from 'next/link';
+import { Box, Flex, Container, Link, useColorModeValue } from '@chakra-ui/react';
+// import Link from '@chakra-ui/react'
+
+import { Link as NextLink } from 'next/link';
+
 import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -33,7 +36,7 @@ const LinkBar = () => {
     <Box
       display={{ base: 'none', md: 'flex' }}
       position="sticky"
-      height="100vh"
+      height="170vh"
       direction="column"
       top="50px"
       bottom="0"
@@ -62,15 +65,18 @@ const LinkBar = () => {
         >
           {Object.keys(links).map((item, index) => (
             <Container key={index} className={styles.links}>
-              <NextLink href={links[item].link} target="_blank" passHref>
+              <Link as={NextLink} href={links[item].link} target="_blank">
+                {/* <NextLink href={links[item].link} target="_blank" passHref> */}
                 <FontAwesomeIcon
                   icon={['fab', `${links[item].icon}`]}
-                  color={iconColor}
+                  // color={iconColor}
                   size="lg"
                 // style={{ transition: 'transform 0.3s ease-in-out' }}
                 // _hover={{ transform: 'scale(1.2)' }}
                 />
-              </NextLink>
+                {/* </NextLink> */}
+              </Link>
+
             </Container>
           ))}
         </Flex>

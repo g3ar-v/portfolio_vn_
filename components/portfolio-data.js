@@ -6,9 +6,10 @@ import dotfiles from '../public/dotfile.jpeg';
 
 const portfolio_data = {
   trevor: {
-    title: 't.r.e.v.o.r',
+    title: 'CORE',
     thumbnail: machine,
     link: 'https://github.com/g3ar-v/trevor-core.git',
+    duration: "2022-present",
     tags: [
       {
         name: 'Machine learning',
@@ -25,15 +26,13 @@ const portfolio_data = {
     ],
     highlight: ['automation', 'mycroftAI'],
     description:
-      'A personal assistant built for automation of mainly, development\
-      processes. It is built on top of mycroftAI. A modular sytem where each \
-      parts can be interchanged. As of 2023 there are two enclosures in use;\
-      Linux and raspberrypi. '
+      'A conversational AI assistant with the aim of providing information ASAP, serve as a reflector of user\'s thoughts.'
   },
   dotfiles: {
     title: 'Dotfiles',
     thumbnail: dotfiles,
     link: 'https://github.com/g3ar-v/dot-files.git',
+    duration: "2023",
     tags: [
       {
         name: 'Bash',
@@ -46,14 +45,14 @@ const portfolio_data = {
     ],
     highlight: ['Neovim'],
     description:
-      "Dotfiles for my Linux/Mac systems (.config/.conf). These are custom\
-      configurations made for various programs used across different OS's. The\
-      main setup to check out is my Neovim configuration. "
+      "A storage for my Linux/Mac systems configurations. These are custom\
+      configurations made for various programs used across different OS's."
   },
   notion: {
-    title: 'Notion Routine Skill',
+    title: 'REMINDER SKILL',
     thumbnail: routine,
-    link: 'https://github.com/g3ar-v/notion-routine-skill.git',
+    link: '',
+    duration: "2022-present",
     tags: [
       {
         name: 'Machine Learning',
@@ -80,6 +79,7 @@ const portfolio_data = {
     title: 'timer skill',
     thumbnail: timer,
     link: 'https://github.com/g3ar-v/mycroft-timer.git',
+    duration: "2022-present",
     tags: [
       {
         name: 'Bash',
@@ -104,6 +104,7 @@ const portfolio_data = {
     title: 'Attendance System',
     thumbnail: attendance,
     link: 'https://github.com/g3ar-v/UOBproject.git',
+    duration: "2021-2022",
     tags: [
       {
         name: 'Raspberry Pi',
@@ -122,11 +123,9 @@ const portfolio_data = {
         icon: 'node-js'
       }
     ],
-    highlight: ['system'],
+    highlight: ['data-caching'],
     description:
-      'A system that can take attendance using a Fingerprint and an RFID.\
-      There are four main components of this system. The backend, the front-end,\
-      the raspberrypi and The database'
+      'A system that can take attendance using a Fingerprint and an RFID with a data-caching mechanism to store and retrieve attendance information during network-latency disruptions'
   }
 };
 export default portfolio_data;

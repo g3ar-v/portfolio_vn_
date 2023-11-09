@@ -1,4 +1,5 @@
-import NextLink from 'next/link';
+import { Link as NextLink } from 'next/link';
+import { useRouter } from 'next/router';
 import { forwardRef } from 'react';
 import Logo from './logo';
 import {
@@ -21,21 +22,25 @@ import { IoLogoGithub } from 'react-icons/io5';
 
 const NAVLINK = [
   { path: '#portfolio', display: 'Portfolio' },
-  { path: '#about', display: 'About' },
-  { path: '#contact', display: 'Contact' }
+  // { path: '#about', display: 'About' },
+  // { path: '#contact', display: 'Contact' }
 ];
 
 const NavItem = ({ href, target, path, children, ...props }) => {
   const active = path === href;
-  const inactiveColor = useColorModeValue('aqua', 'bayLeave');
+  console.log(path)
+  console.log(active)
+  const inactiveColor = useColorModeValue('#37393F', '#757575');
 
   return (
     <Link
       as={NextLink}
       p={2}
       href={href}
-      color={active ? 'blue' : inactiveColor}
-      target={target}
+      // NOTE: this doens't work because using the scroll function doesn't load Navbar 
+      // component
+      color={active ? 'yellow.500' : inactiveColor}
+      // target={target}
       {...props}
     >
       {children}
@@ -48,7 +53,9 @@ const MenuLink = forwardRef((props, ref) => (
 ));
 
 export default function Navbar(props) {
-  const { path } = props;
+  // const { path } = props;
+  const router = useRouter();
+  const currentPath = router.pathname;
   const borderBottom = `2px solid ${useColorModeValue('#37393F', '#37393F')}`;
   return (
     <Box
@@ -58,7 +65,7 @@ export default function Navbar(props) {
       position="fixed"
       // bg={useColorModeValue('blackAlpha.100', 'blackAlpha.500')}
       backdropFilter="blur(16px)"
-      borderBottom={{ base: 'none', md: borderBottom }}
+    // borderBottom={{ base: 'none', md: borderBottom }}
     >
       <Container
         display="flex"
@@ -69,7 +76,7 @@ export default function Navbar(props) {
         justifyContent="space-between"
         {...props}
       >
-        <Flex align="center" mr={5}>
+        <Flex align="center" ml={0}>
           <Heading as="h1" size="lg" letterSpacing={'tighter'}>
             <Logo />
           </Heading>
@@ -79,7 +86,7 @@ export default function Navbar(props) {
           mr={0}
           width={{ base: null, md: '250vh' }}
           display={{ base: 'none', md: 'flex' }}
-          // alignSelf="self-end"
+        // alignSelf="self-end"
         >
           <Stack
             direction={{ base: null, md: 'row' }}
@@ -90,14 +97,15 @@ export default function Navbar(props) {
             gap={10}
           >
             {NAVLINK.map((item, index) => (
-              <NavItem href={item.path} path={path} key={index}>
+
+              <NavItem href={item.path} path={currentPath} key={index}>
                 {item.display}
               </NavItem>
             ))}
             <NavItem
               href="https://github.com/g3ar-v/g3arzportfolio.git"
               display="inline-flex"
-              path={path}
+              path={currentPath}
               gap={2}
               alignItems="center"
               pl={2}
@@ -128,12 +136,13 @@ export default function Navbar(props) {
                 aria-label="Options"
               />
               <MenuList>
-                <MenuItem as={MenuLink} href="/">
-                  About
-                </MenuItem>
-                <MenuItem as={MenuLink} href="#portfolio">
-                  Portfolio
-                </MenuItem>
+                {NAVLINK.map((item, index) => (
+                  <MenuItem as={MenuLink} href={item.path}>
+                    {item.display}
+                  </MenuItem>
+                ))
+
+                }
                 <MenuItem
                   as={Link}
                   href="https://github.com/g3ar-v/g3arzportfolio.git"

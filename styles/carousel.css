@@ -3,10 +3,12 @@
   position: relative;
   /* width: 1500px; */
 }
+
 .embla__container {
   display: flex;
   will-change: transform;
 }
+
 .embla__slide {
   flex-shrink: 0;
 }
@@ -52,9 +54,11 @@
   justify-content: center;
   align-items: center;
 }
+
 .embla__dot--selected:after {
   background: #6d9886;
 }
+
 .embla__button {
   z-index: 1;
   position: absolute;
@@ -67,15 +71,38 @@
   width: 4rem;
   height: 4rem;
 }
+
 .embla__button:disabled {
   opacity: 0.3;
 }
+
 .embla__button--prev {
   left: 0.1rem;
 }
+
 .embla__button--next {
   right: 0.1rem;
 }
+
+@media (max-width: 425px) {
+
+  .embla__dot {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .embla__button {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .embla__button__svg {
+    width: 35%;
+    height: 35%;
+  }
+
+}
+
 .embla__button__svg {
   width: 45%;
   height: 45%;

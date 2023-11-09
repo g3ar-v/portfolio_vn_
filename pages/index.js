@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Hero from '../components/UI/hero';
-import Portfolio from '../components/UI/portfolio';
+import Portfolio from '../pages/portfolio';
 import Conveyor from '../components/conveyor';
 import Contact from '../components/UI/contact';
 import { Box } from '@chakra-ui/react';
@@ -11,14 +11,14 @@ export default function Home() {
     <>
       <Head>
         <title>Victor Nyoyoko</title>
-        <meta name="description" content="Understanding Victor Nyoyoko" />
+        <meta name="description" content="The vibe" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Box id="parent" w="100%">
         <Hero />
         <Portfolio />
-        <Contact />
-        <Conveyor />
+        {/* <Contact /> */}
+        {/* <Conveyor /> */}
       </Box>
     </>
   );

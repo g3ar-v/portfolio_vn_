@@ -14,7 +14,7 @@ const Layout = (props) => {
           <Footer />
         </Box>
       </Flex>
-    </Box>
+    </Box >
   );
 };
 

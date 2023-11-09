@@ -1,4 +1,5 @@
 import { Text, useColorModeValue, Link } from '@chakra-ui/react';
+import { Link as NextLink } from 'next/link';
 import GearIcon from './gear';
 import styled from '@emotion/styled';
 
@@ -22,17 +23,17 @@ const LogoBox = styled.span`
 
 const Logo = () => {
   return (
-    <Link href="#">
+    <Link as={NextLink} href="/">
       <LogoBox>
         <GearIcon />
-        <Text
+        {/* <Text
           color={useColorModeValue('blackMarlin', 'sonicSilver')}
           fontFamily="Plus Jakarta sans"
           fontWeight="700"
           ml={1}
         >
           Victor Nyoyoko
-        </Text>
+        </Text> */}
       </LogoBox>
     </Link>
   );

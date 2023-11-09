@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, useColorModeValue } from '@chakra-ui/react';
-import PortfolioItem from '../portfolio-item';
-import data from '../portfolio-data';
+import PortfolioItem from '../components/portfolio-item';
+import data from '../components/portfolio-data';
 import React, { useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -8,9 +8,9 @@ import {
   DotButton,
   NextButton,
   PrevButton
-} from '../EmblaCarouselArrowDotsButton';
+} from '../components/EmblaCarouselArrowDotsButton';
 import { useState } from 'react';
-import styles from '../../styles/Home.module.css';
+import styles from '../styles/Home.module.css';
 
 // var $ = require('jquery');
 // if (typeof window !== 'undefined') {
@@ -26,11 +26,11 @@ const Portfolio = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
-      loop: false,
+      loop: true,
       align: 'start',
       dragFree: true
     },
-    [Autoplay()]
+    []
   );
 
   const scrollPrev = useCallback(
@@ -69,44 +69,51 @@ const Portfolio = () => {
 
   const portfolio_data = data;
   const portfolioItems = Object.keys(portfolio_data);
-  return (
-    <Box
-      id="#portfolio"
-      borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
+  return (<Box
+    // borderTop={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
+    pt="30px"
+    mt="30px"
+    className='scroll-margin-top'
+  >
+    <section id="portfolio"
     >
       <Flex
         direction="column"
         alignItems="flex-start"
-        m={{ base: '30px', md: '40px' }}
+        ml={{ base: '30px', md: '50px' }}
+        mr={{ base: '30px', md: '50px' }}
       >
-        <Heading as="h2" variant="page-title" size="2xl">
+        <Heading as="h2" variant="page-title" size="2xl" pb={{ base: "50px" }}>
           Portfolio
         </Heading>
         <Box
           className="embla"
           ref={emblaRef}
-          width={{ base: 'sm', md: '87vw' }}
+          width={{ base: 'sm', md: '127vw' }}
+          mt={{ base: "40px" }}
         >
-          <Box padding="60px 30px" className="embla__container">
+          <Box
+            // padding="60px 30px"
+            mb={{ base: "30px" }}
+            className="embla__container">
             {portfolioItems.map((item, index) => (
               <PortfolioItem
                 key={index}
                 highlight={portfolio_data[item].highlight}
-                tags={portfolio_data[item].tags}
+                duration={portfolio_data[item].duration}
                 title={portfolio_data[item].title}
                 thumbnail={portfolio_data[item].thumbnail}
                 href={portfolio_data[item].link}
                 description={portfolio_data[item].description}
-                className={`${styles.item} embla__slide ${
-                  activeIndex === index ? `${styles.active}` : ''
-                }`}
+                className={`${styles.item} embla__slide ${activeIndex === index ? `${styles.active}` : ''
+                  }`}
                 onClick={() => handleCarouselClick(index)}
               />
             ))}
           </Box>
 
-          <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-          <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+          {/* <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+          <NextButton onClick={scrollNext} enabled={nextBtnEnabled} /> */}
           <Box className="embla__dots" style={{}}>
             {scrollSnaps.map((_, index) => (
               <DotButton
@@ -118,7 +125,8 @@ const Portfolio = () => {
           </Box>
         </Box>
       </Flex>
-    </Box>
+    </section>
+  </Box>
   );
 };
 

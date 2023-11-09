@@ -1,4 +1,11 @@
 /** Face Card **/
+/* html {
+  scroll-behavior: smooth;
+} */
+
+.scroll-margin-top {
+  scroll-margin-top: 0;
+}
 
 .cardContainer {
   margin: 50px;
@@ -80,7 +87,7 @@
   border: 1px solid white;
 }
 
-.textContainer:hover ~ .border h2 {
+.textContainer:hover~.border h2 {
   opacity: 1;
   width: 11.5ch;
   line-height: normal;
@@ -92,29 +99,30 @@
   position: relative;
 }
 
-.textContainer:hover ~ .card0 {
+.textContainer:hover~.card0 {
   background: url('../public/victornyoyoko.jpg') left center no-repeat;
   background-size: 670px;
 }
+
 /** Face Card **/
 
 /** Link Bar **/
 
-.links {
+/* .links {
   margin: 5px;
   font-size: 20px;
   transition: all 0.4s ease-in-out;
-}
+} */
 
-.links:hover {
-  /* margin: 5px; */
+/* .links:hover {
+  margin: 5px;
 
   font-size: 30px;
-}
+} */
 
 /** Link Bar **/
 
-/** Portfolio **/
+/** Portfolio Carousel **/
 
 .item {
   margin: 0 15px 60px;
@@ -176,6 +184,7 @@
 }
 
 .active .item_desc p {
+  margin-bottom: 20px;
   opacity: 1;
   transform: translateY(0);
   -webkit-transform: translateY(0);
@@ -188,6 +197,7 @@
   gap: var(--gap);
   /* background-color: var(--color-bg); */
 }
+
 .wrapper {
   --color-bg: #d4cab1;
   --color-bg-accent: #262626;
@@ -206,13 +216,11 @@
   overflow: hidden;
   user-select: none;
   gap: var(--gap);
-  mask-image: linear-gradient(
-    var(--mask-direction, to right),
-    hsl(0 0% 0% / 0),
-    hsl(0 0% 0% / 1) 20%,
-    hsl(0 0% 0% / 1) 80%,
-    hsl(0 0% 0% / 0)
-  );
+  mask-image: linear-gradient(var(--mask-direction, to right),
+      hsl(0 0% 0% / 0),
+      hsl(0 0% 0% / 1) 20%,
+      hsl(0 0% 0% / 1) 80%,
+      hsl(0 0% 0% / 0));
 }
 
 .marquee__group {
@@ -251,6 +259,7 @@
   from {
     transform: translateX(var(--scroll-start));
   }
+
   to {
     transform: translateX(var(--scroll-end));
   }
@@ -259,11 +268,12 @@
 /** Conveyor Belt **/
 
 /** Responsive **/
-@media (max-width: 399px) {
+@media (max-width: 429px) {
+
   /** Portfolio **/
   .item {
     margin: 0 15px 60px;
-    width: 300px;
+    width: 320px;
     height: 500px;
     display: flex;
     display: -webkit-flex;
@@ -279,7 +289,7 @@
   }
 
   .active {
-    width: 370px;
+    width: 350px;
     box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
   }
@@ -325,5 +335,6 @@
     transform: translateY(0);
     -webkit-transform: translateY(0);
   }
+
   /** Portfolio **/
 }
