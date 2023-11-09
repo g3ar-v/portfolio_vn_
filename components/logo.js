@@ -1,4 +1,6 @@
-import { Text, useColorModeValue, Link } from '@chakra-ui/react';
+import {
+  Link
+} from '@chakra-ui/react';
 import { Link as NextLink } from 'next/link';
 import GearIcon from './gear';
 import styled from '@emotion/styled';
@@ -23,7 +25,7 @@ const LogoBox = styled.span`
 
 const Logo = () => {
   return (
-    <Link as={NextLink} href="/">
+    <Link as={NextLink} href="#">
       <LogoBox>
         <GearIcon />
         {/* <Text

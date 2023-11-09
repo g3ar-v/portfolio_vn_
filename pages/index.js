@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Hero from '../components/UI/hero';
 import Portfolio from '../pages/portfolio';
-import Conveyor from '../components/conveyor';
-import Contact from '../components/UI/contact';
+// import Conveyor from '../components/conveyor';
+// import Contact from '../components/UI/contact';
 import { Box } from '@chakra-ui/react';
 import '../styles/font-awesome';
 

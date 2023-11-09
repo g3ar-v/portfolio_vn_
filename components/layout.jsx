@@ -7,9 +7,9 @@ const Layout = (props) => {
   return (
     <Box minH="100vh" ref={props.ref}>
       <Navbar />
-      <Flex pt={10}>
+      <Flex pt={10} >
         <LinkBar />
-        <Box flex={1}>
+        <Box>
           {props.children}
           <Footer />
         </Box>

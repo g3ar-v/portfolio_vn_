@@ -1,13 +1,15 @@
-import { Box, Flex, Heading, useColorModeValue } from '@chakra-ui/react';
+import {
+  Box, Flex, Heading,
+} from '@chakra-ui/react';
 import PortfolioItem from '../components/portfolio-item';
 import data from '../components/portfolio-data';
 import React, { useEffect, useCallback } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
+// import Autoplay from 'embla-carousel-autoplay';
 import {
   DotButton,
-  NextButton,
-  PrevButton
+  // NextButton,
+  // PrevButton
 } from '../components/EmblaCarouselArrowDotsButton';
 import { useState } from 'react';
 import styles from '../styles/Home.module.css';
@@ -33,17 +35,17 @@ const Portfolio = () => {
     []
   );
 
-  const scrollPrev = useCallback(
-    () => emblaApi && emblaApi.scrollPrev(),
-    [emblaApi]
-  );
+  // const scrollPrev = useCallback(
+  //   () => emblaApi && emblaApi.scrollPrev(),
+  //   [emblaApi]
+  // );
 
-  const scrollNext = useCallback(
-    () => emblaApi && emblaApi.scrollNext(),
-    [emblaApi]
-  );
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  // const scrollNext = useCallback(
+  //   () => emblaApi && emblaApi.scrollNext(),
+  //   [emblaApi]
+  // );
+  // const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+  // const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
 
@@ -55,8 +57,8 @@ const Portfolio = () => {
   const onSelect = useCallback(() => {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
-    setPrevBtnEnabled(emblaApi.canScrollPrev());
-    setNextBtnEnabled(emblaApi.canScrollNext());
+    // setPrevBtnEnabled(emblaApi.canScrollPrev());
+    // setNextBtnEnabled(emblaApi.canScrollNext());
   }, [emblaApi, setSelectedIndex]);
 
   useEffect(() => {
@@ -70,7 +72,6 @@ const Portfolio = () => {
   const portfolio_data = data;
   const portfolioItems = Object.keys(portfolio_data);
   return (<Box
-    // borderTop={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
     pt="30px"
     mt="30px"
     className='scroll-margin-top'
@@ -89,7 +90,7 @@ const Portfolio = () => {
         <Box
           className="embla"
           ref={emblaRef}
-          width={{ base: 'sm', md: '127vw' }}
+          width={{ base: '97vw', md: '87vw' }}
           mt={{ base: "40px" }}
         >
           <Box

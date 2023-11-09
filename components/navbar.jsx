@@ -26,10 +26,10 @@ const NAVLINK = [
   // { path: '#contact', display: 'Contact' }
 ];
 
-const NavItem = ({ href, target, path, children, ...props }) => {
+const NavItem = ({ href, path, children, ...props }) => {
   const active = path === href;
-  console.log(path)
-  console.log(active)
+  // console.log(path)
+  // console.log(active)
   const inactiveColor = useColorModeValue('#37393F', '#757575');
 
   return (
@@ -40,7 +40,6 @@ const NavItem = ({ href, target, path, children, ...props }) => {
       // NOTE: this doens't work because using the scroll function doesn't load Navbar 
       // component
       color={active ? 'yellow.500' : inactiveColor}
-      // target={target}
       {...props}
     >
       {children}
@@ -56,16 +55,13 @@ export default function Navbar(props) {
   // const { path } = props;
   const router = useRouter();
   const currentPath = router.pathname;
-  const borderBottom = `2px solid ${useColorModeValue('#37393F', '#37393F')}`;
   return (
     <Box
       as="nav"
       zIndex={9999}
       w="100%"
       position="fixed"
-      // bg={useColorModeValue('blackAlpha.100', 'blackAlpha.500')}
       backdropFilter="blur(16px)"
-    // borderBottom={{ base: 'none', md: borderBottom }}
     >
       <Container
         display="flex"
@@ -137,12 +133,10 @@ export default function Navbar(props) {
               />
               <MenuList>
                 {NAVLINK.map((item, index) => (
-                  <MenuItem as={MenuLink} href={item.path}>
+                  <MenuItem as={MenuLink} href={item.path} key={index}>
                     {item.display}
                   </MenuItem>
-                ))
-
-                }
+                ))}
                 <MenuItem
                   as={Link}
                   href="https://github.com/g3ar-v/g3arzportfolio.git"

@@ -30,7 +30,6 @@ const LinkBar = () => {
     }
   };
 
-  const iconColor = useColorModeValue('#427b58', '#757575');
 
   return (
     <Box
@@ -44,7 +43,6 @@ const LinkBar = () => {
       justifyContent="flex-end" // Changed from 'space-around' to 'flex-end' to move the icons to the bottom
       alignItems="flex-end"
       boxSizing="border-box"
-      // pb="20px"
       borderRight={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
     >
       <Box
@@ -66,15 +64,10 @@ const LinkBar = () => {
           {Object.keys(links).map((item, index) => (
             <Container key={index} className={styles.links}>
               <Link as={NextLink} href={links[item].link} target="_blank">
-                {/* <NextLink href={links[item].link} target="_blank" passHref> */}
                 <FontAwesomeIcon
                   icon={['fab', `${links[item].icon}`]}
-                  // color={iconColor}
                   size="lg"
-                // style={{ transition: 'transform 0.3s ease-in-out' }}
-                // _hover={{ transform: 'scale(1.2)' }}
                 />
-                {/* </NextLink> */}
               </Link>
 
             </Container>
