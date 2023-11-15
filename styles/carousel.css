@@ -37,7 +37,7 @@
 }
 
 .embla__dot:after {
-  background: #5c5a52;
+  background: #37393F;
   border-radius: 0.9rem;
   width: 100%;
   height: 0.3rem;
@@ -56,7 +56,7 @@
 }
 
 .embla__dot--selected:after {
-  background: #6d9886;
+  background: #f3f3f3;
 }
 
 .embla__button {
