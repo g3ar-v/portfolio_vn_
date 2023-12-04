@@ -1,13 +1,18 @@
 import {
   Box,
   Highlight,
+  AccordionItem,
   Link,
   Flex,
   LinkBox,
   LinkOverlay,
-  Text
+  Text,
+  AccordionButton,
+  AccordionPanel
 } from '@chakra-ui/react';
 import styles from '../styles/Home.module.css';
+import { CldVideoPlayer } from 'next-cloudinary'
+import { IoLogoGithub } from 'react-icons/io5';
 
 const PortfolioItem = ({
   duration,
@@ -17,36 +22,58 @@ const PortfolioItem = ({
   href,
   description,
   className,
+  videos,
   onClick
 }) => {
+  const showAccordionPanel = className.includes('embla__slide')
+  // console.log("accordion: " + showAccordionPanel)
   return (
-    <Box
-      className={className}
-      onClick={onClick}
-      style={{ backgroundImage: `url(${thumbnail.src})` }}
-    >
-      <Box className={styles.item_desc}>
-        <Flex justifyContent="space-between">
-          <Text as="h3" casing="uppercase" variant={'sub-heading'} mt={2} mb={5}>
-            {title}
-          </Text>
-          <Text as="h3" casing="uppercase" variant={'date-heading'} mt={2} mb={5}>
-            {duration}
-          </Text>
-        </Flex>
-        <p>
-          <Highlight query={highlight} styles={{ color: 'yellow.500' }}>
-            {description}
-          </Highlight>
-        </p>
+    <AccordionItem>
+      <AccordionButton>
+        <Box
+          className={className}
+          onClick={onClick}
+          style={{ backgroundImage: `url(${thumbnail.src})` }}
+        >
+          <Box className={styles.item_desc}>
+            <Flex justifyContent="space-between">
+              <Text as="h3" casing="uppercase" variant={'sub-heading'} mt={2} mb={5}>
+                {title}
+              </Text>
+              <Text as="h3" casing="uppercase" variant={'date-heading'} mt={2} mb={5}>
+                {duration}
+              </Text>
+            </Flex>
+            <p>
+              <Highlight query={highlight} styles={{ color: 'yellow.500' }}>
+                {description}
+              </Highlight>
+            </p>
 
-        <LinkBox display="flex" flexDirection="column">
-          <LinkOverlay as={Link} href={href} target="_blank">
-            <p>github↗</p>
-          </LinkOverlay>
-        </LinkBox>
-      </Box>
-    </Box>
+            {href !== '' ? (
+              < LinkBox display="flex" flexDirection="row">
+                <LinkOverlay as={Link} href={href} target="_blank">
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
+                    <IoLogoGithub />
+                    github↗
+                  </span>
+                </LinkOverlay>
+              </LinkBox>
+            ) : null}
+
+          </Box>
+        </Box >
+      </AccordionButton>
+
+      {showAccordionPanel && videos !== undefined ? (
+        <AccordionPanel>
+          <Flex flexDirection="row" gap={4}>
+            {videos.map((video, index) => (
+              <CldVideoPlayer key={index} width="800" height="800" src={video} />
+            ))}
+          </Flex>
+        </AccordionPanel>) : null}
+    </AccordionItem>
   );
 };
 

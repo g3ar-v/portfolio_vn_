@@ -20,10 +20,6 @@ const LinkBar = () => {
       link: 'https://github.com/g3ar-v/',
       icon: 'github-alt'
     },
-    spotify: {
-      link: 'https://open.spotify.com/user/frankjnr368',
-      icon: 'spotify'
-    },
     twitter: {
       link: 'https://twitter.com/victornyoyoko_',
       icon: 'twitter'
@@ -60,6 +56,7 @@ const LinkBar = () => {
           justifyContent="space-between"
           direction="column"
           position="relative"
+          gap={2}
         >
           {Object.keys(links).map((item, index) => (
             <Container key={index} className={styles.links}>

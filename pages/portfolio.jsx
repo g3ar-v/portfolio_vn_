@@ -1,4 +1,5 @@
 import {
+  Accordion,
   Box, Flex, Heading,
 } from '@chakra-ui/react';
 import PortfolioItem from '../components/portfolio-item';
@@ -87,44 +88,48 @@ const Portfolio = () => {
         <Heading as="h2" variant="page-title" size="2xl" pb={{ base: "50px" }}>
           Portfolio
         </Heading>
-        <Box
-          className="embla"
-          ref={emblaRef}
-          width={{ base: '97vw', md: '87vw' }}
-          mt={{ base: "40px" }}
-        >
+        <Accordion allowToggle>
           <Box
-            // padding="60px 30px"
-            mb={{ base: "30px" }}
-            className="embla__container">
-            {portfolioItems.map((item, index) => (
-              <PortfolioItem
-                key={index}
-                highlight={portfolio_data[item].highlight}
-                duration={portfolio_data[item].duration}
-                title={portfolio_data[item].title}
-                thumbnail={portfolio_data[item].thumbnail}
-                href={portfolio_data[item].link}
-                description={portfolio_data[item].description}
-                className={`${styles.item} embla__slide ${activeIndex === index ? `${styles.active}` : ''
-                  }`}
-                onClick={() => handleCarouselClick(index)}
-              />
-            ))}
-          </Box>
+            className="embla"
+            ref={emblaRef}
+            width={{ base: '97vw', md: '87vw' }}
+            mt={{ base: "40px" }}
+          >
+            <Box
+              // padding="60px 30px"
+              mb={{ base: "30px" }}
+              className="embla__container">
+              {portfolioItems.map((item, index) => (
+                <PortfolioItem
+                  key={index}
+                  highlight={portfolio_data[item].highlight}
+                  duration={portfolio_data[item].duration}
+                  title={portfolio_data[item].title}
+                  thumbnail={portfolio_data[item].thumbnail}
+                  href={portfolio_data[item].link}
+                  description={portfolio_data[item].description}
+                  videos={portfolio_data[item].videos}
+                  className={`${styles.item} embla__slide ${activeIndex === index ? `${styles.active}` : ''
+                    }`}
+                  onClick={() => handleCarouselClick(index)}
+                />
+              ))}
+            </Box>
 
-          {/* <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
+
+            {/* <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
           <NextButton onClick={scrollNext} enabled={nextBtnEnabled} /> */}
-          <Box className="embla__dots" style={{}}>
-            {scrollSnaps.map((_, index) => (
-              <DotButton
-                key={index}
-                selected={index === selectedIndex}
-                onClick={() => scrollTo(index)}
-              />
-            ))}
+            <Box className="embla__dots" style={{}}>
+              {scrollSnaps.map((_, index) => (
+                <DotButton
+                  key={index}
+                  selected={index === selectedIndex}
+                  onClick={() => scrollTo(index)}
+                />
+              ))}
+            </Box>
           </Box>
-        </Box>
+        </Accordion>
       </Flex>
     </section>
   </Box>
