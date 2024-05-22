@@ -13,6 +13,21 @@ const styles = {
     'html, body': {
       scrollBehavior: "smooth",
       bg: mode('#DBC8AC', '#161616')(props)
+    },
+    '::-webkit-scrollbar-thumb': {
+      '--tw-border-opacity': '0.5',
+      'background-color': mode('#37393F', '#757575')(props),
+      'border-width': '1px',
+      'width': '0.1em'
+    },
+    '::-webkit-scrollbar': {
+      'background-color': mode('#DBC8AC', '#161616')(props),
+      'height': '1rem',
+      'width': '0.5rem'
+    },
+    '::-webkit-scrollbar-track': {
+      'background-color': 'transparent',
+      'border-radius': '9999px'
     }
   })
 };

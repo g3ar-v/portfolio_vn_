@@ -29,7 +29,7 @@ const Portfolio = () => {
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
-      loop: true,
+      loop: false,
       align: 'start',
       dragFree: true
     },
