@@ -6,8 +6,6 @@ export const DotButton = (props) => {
   const SelectedEmblaDotColor = useColorModeValue("#000000", "#F3F3F3")
   const emblaDotColor = useColorModeValue("#CECECF", "#757575")
 
-  console.log(`embla__dot:after${selected ? ' embla__dot--selected:after' : ''}`)
-  console.log('embla__dot'.concat(selected ? ' embla__dot--selected' : ''))
   return (
     <button
       className={'embla__dot'.concat(selected ? ' embla__dot--selected' : '')}

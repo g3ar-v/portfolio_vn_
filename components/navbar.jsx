@@ -28,8 +28,6 @@ const NAVLINK = [
 
 const NavItem = ({ href, path, children, ...props }) => {
   const active = path === href;
-  // console.log(path)
-  // console.log(active)
   const inactiveColor = useColorModeValue('#37393F', '#757575');
 
   return (

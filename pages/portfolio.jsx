@@ -1,7 +1,6 @@
 import {
   Accordion,
   Box, Flex, Heading,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import PortfolioItem from '../components/portfolio-item';
 import data from '../components/portfolio-data';
@@ -23,8 +22,6 @@ import styles from '../styles/Home.module.css';
 
 const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const SelectedEmblaDotColor = useColorModeValue("#000000", "#F3F3F3")
-  const emblaDotColor = useColorModeValue("#CECECF", "")
 
   function handleCarouselClick(index) {
     setActiveIndex(index === activeIndex ? null : index);
