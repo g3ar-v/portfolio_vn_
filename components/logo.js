@@ -1,9 +1,10 @@
 import {
-  Link
+  Link, Text
 } from '@chakra-ui/react';
 import { Link as NextLink } from 'next/link';
 import GearIcon from './gear';
 import styled from '@emotion/styled';
+import { useColorModeValue } from '@chakra-ui/react';
 
 const LogoBox = styled.span`
   font-weight: 700;
@@ -28,14 +29,14 @@ const Logo = () => {
     <Link as={NextLink} href="#">
       <LogoBox>
         <GearIcon />
-        {/* <Text
-          color={useColorModeValue('blackMarlin', 'sonicSilver')}
+        <Text
+          color={useColorModeValue('black', 'sonicSilver')}
           fontFamily="Plus Jakarta sans"
           fontWeight="700"
           ml={1}
         >
           Victor Nyoyoko
-        </Text> */}
+        </Text>
       </LogoBox>
     </Link>
   );

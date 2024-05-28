@@ -12,18 +12,23 @@ const styles = {
   global: (props) => ({
     'html, body': {
       scrollBehavior: "smooth",
-      bg: mode('#DBC8AC', '#161616')(props)
+      bg: mode('#efeee9', '#161616')(props),
+      fg: mode('#000000', '#F3F3F3')(props)
     },
     '::-webkit-scrollbar-thumb': {
       '--tw-border-opacity': '0.5',
-      'background-color': mode('#37393F', '#757575')(props),
+      'background-color': mode('#000000', '#757575')(props),
       'border-width': '1px',
       'width': '0.1em'
     },
     '::-webkit-scrollbar': {
-      'background-color': mode('#DBC8AC', '#161616')(props),
-      'height': '1rem',
+      'background-color': 'inherit',
+      'height': '0.5rem',
       'width': '0.5rem'
+    },
+    '::-webkit-scrollbar-track-piece': {
+      'background-color': 'transparent',
+      'border-radius': '9999px'
     },
     '::-webkit-scrollbar-track': {
       'background-color': 'transparent',
@@ -56,15 +61,15 @@ const components = {
         _dark: { color: '#757575' }
       },
       'page-title-main': {
-        color: '#37393F',
+        color: '#000000',
 
         lineHeight: "1.0em",
         // fontWeight: '800',
         // textShadow: '10px 4px 10px #5C5A52',
         _dark: { color: '#F3F3F3', textShadow: 'none' }
       },
-      'page-title': {
-        color: '#37393F',
+      'component-title': {
+        color: '#000000',
         _dark: { color: '#37393F' }
       },
       'page-title-mini': {
@@ -98,11 +103,8 @@ const components = {
         lineHeight: '1.5'
       },
       'outline-s': {
-        fontFamily: "Inter",
-        'outline-s': {
-          fontFamily: "Inter",
-          color: mode('#37393F', '#F3F3F3')
-        },
+        // fontFamily: "Inter",
+        // color: mode('#000000', '#F3F3F3')
       },
       'outline-p': {
         fontSize: 20,
@@ -124,13 +126,29 @@ const components = {
 
   Link: {
     baseStyle: (props) => ({
-      color: mode('#37393F', '#757575')(props),
+      color: mode('#000000', '#757575')(props),
+      fontWeight: 'bold',
+      fontSize: '1.1rem',
+
       // textUnderlineOffset: 3,
       _hover: {
-        color: mode('#f3f3f3', '#f3f3f3')(props),
+        color: mode('#676470', '#f3f3f3')(props),
         textDecoration: 'none'
       }
-    })
+    }),
+    variants: {
+      'portfolio-link': {
+        color: '#ed6c35',
+        fontWeight: 'light',
+        fontSize: '0.9rem',
+
+        // textUnderlineOffset: 3,
+        _hover: {
+          color: '#676470',
+          textDecoration: 'none',
+        }
+      }
+    }
   },
   Tag: tagTheme,
   Button: {
@@ -169,7 +187,8 @@ const colors = {
   bayLeave: '#7F9F93',
   blue: '#1C3879',
   grey: '#5C5A52',
-  aqua: '#427b58'
+  aqua: '#427b58',
+  black: '#000000'
 };
 
 const breakpoints = {

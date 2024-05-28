@@ -41,14 +41,14 @@ const Hero = () => {
           ml={{ base: "0", md: "50px" }}
         >
           <Heading as="h1" variant="page-title-main" fontSize={{ base: "4rem", md: "10rem" }} style={{ marginBottom: '0' }}>
-            Victor
+            Software
           </Heading>
           <Heading as="h1" variant="page-title-main" fontSize={{ base: "4rem", md: "10rem" }} >
-            Nyoyoko
+            Engineer
           </Heading>
-          <Heading mt="30px" as="h2" variant="page-title-secondary" size="xl">
+          {/* <Heading mt="30px" as="h2" variant="page-title-secondary" size="xl">
             Software Engineer
-          </Heading>
+          </Heading> */}
         </Box>
         <motion.div
           initial={{ x: 500, opacity: 1 }} // Initial position of the box

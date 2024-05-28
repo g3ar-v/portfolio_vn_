@@ -3,11 +3,21 @@ import { useColorModeValue } from '@chakra-ui/react';
 
 export const DotButton = (props) => {
   const { selected, onClick } = props;
+  const SelectedEmblaDotColor = useColorModeValue("#000000", "#F3F3F3")
+  const emblaDotColor = useColorModeValue("#CECECF", "#757575")
 
+  console.log(`embla__dot:after${selected ? ' embla__dot--selected:after' : ''}`)
+  console.log('embla__dot'.concat(selected ? ' embla__dot--selected' : ''))
   return (
     <button
       className={'embla__dot'.concat(selected ? ' embla__dot--selected' : '')}
       type="button"
+      style={{
+        '--dot-background': emblaDotColor,
+        '--dot-selected-background': SelectedEmblaDotColor,
+      }}
+      // className={`embla__dot:${selected ? ' embla__dot--selected' : ''}`}
+      // style={{ backgroundColor: emblaDotColor ? selected : SelectedEmblaDotColor }}
       onClick={onClick}
     />
   );

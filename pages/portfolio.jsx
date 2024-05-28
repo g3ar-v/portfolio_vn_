@@ -1,6 +1,7 @@
 import {
   Accordion,
   Box, Flex, Heading,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import PortfolioItem from '../components/portfolio-item';
 import data from '../components/portfolio-data';
@@ -22,6 +23,8 @@ import styles from '../styles/Home.module.css';
 
 const Portfolio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const SelectedEmblaDotColor = useColorModeValue("#000000", "#F3F3F3")
+  const emblaDotColor = useColorModeValue("#CECECF", "")
 
   function handleCarouselClick(index) {
     setActiveIndex(index === activeIndex ? null : index);
@@ -85,7 +88,7 @@ const Portfolio = () => {
         ml={{ base: '30px', md: '50px' }}
         mr={{ base: '30px', md: '50px' }}
       >
-        <Heading as="h2" variant="page-title" size="2xl" pb={{ base: "50px" }}>
+        <Heading as="h2" variant="component-title" size="2xl" pb={{ base: "50px" }}>
           Portfolio
         </Heading>
         <Accordion allowToggle>
@@ -119,7 +122,7 @@ const Portfolio = () => {
 
             {/* <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
           <NextButton onClick={scrollNext} enabled={nextBtnEnabled} /> */}
-            <Box className="embla__dots" style={{}}>
+            <Box className="embla__dots" >
               {scrollSnaps.map((_, index) => (
                 <DotButton
                   key={index}

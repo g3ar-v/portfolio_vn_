@@ -42,8 +42,9 @@ const PortfolioItem = ({
         </p>
 
         {href !== '' ? (
-          < LinkBox display="flex" flexDirection="row">
-            <LinkOverlay as={Link} href={href} target="_blank">
+          <LinkBox display="flex" flexDirection="row">
+            <LinkOverlay as={Link} href={href} target="_blank" variant="portfolio-link"
+            >
               <span style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
                 <IoLogoGithub />
                 github
