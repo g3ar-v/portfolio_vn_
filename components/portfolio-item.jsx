@@ -31,7 +31,7 @@ const PortfolioItem = ({
           <Text as="h3" casing="uppercase" variant={'sub-heading'} mt={2} mb={5}>
             {title}
           </Text>
-          <Text as="h3" casing="uppercase" variant={'date-heading'} mt={2} mb={5}>
+          <Text as="h3" casing="uppercase"  mt={2} mb={5}>
             {duration}
           </Text>
         </Flex>

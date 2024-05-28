@@ -11,7 +11,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const styles = {
   global: (props) => ({
     'html, body': {
-      scrollBehavior: "smooth",
+      scrollBehavior: 'smooth',
       bg: mode('#efeee9', '#161616')(props),
       fg: mode('#000000', '#F3F3F3')(props)
     },
@@ -19,12 +19,12 @@ const styles = {
       '--tw-border-opacity': '0.5',
       'background-color': mode('#000000', '#757575')(props),
       'border-width': '1px',
-      'width': '0.1em'
+      width: '0.1em'
     },
     '::-webkit-scrollbar': {
       'background-color': 'inherit',
-      'height': '0.5rem',
-      'width': '0.5rem'
+      height: '0.5rem',
+      width: '0.5rem'
     },
     '::-webkit-scrollbar-track-piece': {
       'background-color': 'transparent',
@@ -63,7 +63,7 @@ const components = {
       'page-title-main': {
         color: '#000000',
 
-        lineHeight: "1.0em",
+        lineHeight: '1.0em',
         // fontWeight: '800',
         // textShadow: '10px 4px 10px #5C5A52',
         _dark: { color: '#F3F3F3', textShadow: 'none' }
@@ -105,21 +105,18 @@ const components = {
       'outline-s': {
         // fontFamily: "Inter",
         // color: mode('#000000', '#F3F3F3')
+        color: mode('#e8e8e8', '#5C5A52')
       },
       'outline-p': {
-        fontSize: 20,
         color: mode('#37393F', '#5C5A52')
       }
     },
     sizes: {
       sm: {
-        fontSize: 'lg'
+        fontSize: 'md'
       },
       md: {
-        fontSize: 'xl'
-      },
-      lg: {
-        fontSize: '2xl'
+        fontSize: 'lg'
       }
     }
   },
@@ -138,14 +135,14 @@ const components = {
     }),
     variants: {
       'portfolio-link': {
-        color: '#ed6c35',
+        color: '#678b63',
         fontWeight: 'light',
         fontSize: '0.9rem',
 
         // textUnderlineOffset: 3,
         _hover: {
           color: '#676470',
-          textDecoration: 'none',
+          textDecoration: 'none'
         }
       }
     }
