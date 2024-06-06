@@ -1,6 +1,6 @@
 /* Handles the theme and components from Chakra UI */
 
-import { extendTheme } from '@chakra-ui/react';
+import { color, extendTheme } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 import { tagAnatomy } from '@chakra-ui/anatomy';
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react';
@@ -8,6 +8,7 @@ import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react';
 const { definePartsStyle, defineMultiStyleConfig } =
   createMultiStyleConfigHelpers(tagAnatomy.keys);
 
+// TODO: use constant color definition style here for light and dark theme
 const styles = {
   global: (props) => ({
     'html, body': {
@@ -105,10 +106,17 @@ const components = {
       'outline-s': {
         // fontFamily: "Inter",
         // color: mode('#000000', '#F3F3F3')
-        color: mode('#e8e8e8', '#5C5A52')
+        // color: mode('#000000', '#5C5A52')
+        color: '#000000',
+        _dark: {
+          color: '#f3f3f3'
+        }
       },
       'outline-p': {
-        color: mode('#37393F', '#5C5A52')
+        color: '#37393F',
+        _dark: {
+          color: '#5c5a52'
+        }
       }
     },
     sizes: {
@@ -125,7 +133,7 @@ const components = {
     baseStyle: (props) => ({
       color: mode('#000000', '#757575')(props),
       fontWeight: 'bold',
-      fontSize: '1.1rem',
+      fontSize: '1.0rem',
 
       // textUnderlineOffset: 3,
       _hover: {
