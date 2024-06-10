@@ -10,10 +10,13 @@ export default function Home() {
     <>
       <Head>
         <title>Victor Nyoyoko</title>
-        <meta name="description" content="Welcome to the personal portfolio website of Victor Nyoyoko, showcasing projects and professional achievements." />
+        <meta
+          name="description"
+          content="Welcome to the personal portfolio website of Victor Nyoyoko, showcasing projects and professional achievements."
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Box id="parent" w="100%">
+      <Box id="parent">
         <Hero />
         <Portfolio />
         {/* <Contact /> */}

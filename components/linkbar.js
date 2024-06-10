@@ -1,4 +1,4 @@
-import { Box, Flex, Container, Link, useColorModeValue } from '@chakra-ui/react';
+import { Box, Flex, Container, Link } from '@chakra-ui/react';
 // import Link from '@chakra-ui/react'
 
 import { Link as NextLink } from 'next/link';
@@ -7,7 +7,7 @@ import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const LinkBar = () => {
-  const borderColor = useColorModeValue('#000000', '#37393F');
+  // const borderColor = useColorModeValue('#000000', '#37393F');
   const links = {
     linkedin: {
       link: 'https://www.linkedin.com/in/victor-nyoyoko-1a1518196/',
@@ -27,7 +27,6 @@ const LinkBar = () => {
     }
   };
 
-
   return (
     <Box
       display={{ base: 'none', md: 'flex' }}
@@ -40,7 +39,7 @@ const LinkBar = () => {
       justifyContent="flex-end" // Changed from 'space-around' to 'flex-end' to move the icons to the bottom
       alignItems="flex-end"
       boxSizing="border-box"
-      borderRight={`2px solid ${borderColor}`}
+      // borderRight={`2px solid ${borderColor}`}
     >
       <Box
         display="block"
@@ -67,7 +66,6 @@ const LinkBar = () => {
                   size="lg"
                 />
               </Link>
-
             </Container>
           ))}
         </Flex>

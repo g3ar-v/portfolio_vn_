@@ -60,7 +60,7 @@ export default function Navbar(props) {
       w="100%"
       position="fixed"
       backdropFilter="blur(16px)"
-      borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
+      // borderBottom={`2px solid ${useColorModeValue('#37393F', '#37393F')}`}
     >
       <Container
         display="flex"

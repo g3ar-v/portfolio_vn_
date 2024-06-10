@@ -12,10 +12,12 @@ const { definePartsStyle, defineMultiStyleConfig } =
 const styles = {
   global: (props) => ({
     'html, body': {
+      // fontFamily: 'Plus Jakarta Sans',
       scrollBehavior: 'smooth',
-      bg: mode('#efeee9', '#161616')(props),
+      bg: mode('#efeee9', '#1c1c1c')(props),
       fg: mode('#000000', '#F3F3F3')(props)
     },
+
     '::-webkit-scrollbar-thumb': {
       '--tw-border-opacity': '0.5',
       'background-color': mode('#000000', '#757575')(props),
@@ -38,44 +40,53 @@ const styles = {
   })
 };
 
-const baseStyle = definePartsStyle({
-  container: {
-    padding: '10px',
-    // width: 'fit-content',
-    borderRadius: '6px',
-    _dark: {
-      backround: 'transparent'
-    }
-  },
-  label: defineStyle({
-    _dark: {}
-  })
-});
-
-const tagTheme = defineMultiStyleConfig({ baseStyle });
+// const baseStyle = definePartsStyle({
+//   container: {
+//     padding: '10px',
+//     // width: 'fit-content',
+//     borderRadius: '6px',
+//     _dark: {
+//       backround: 'transparent'
+//     }
+//   },
+//   label: defineStyle({
+//     _dark: {}
+//   })
+// });
+// const tagTheme = defineMultiStyleConfig({ baseStyle });
 
 const components = {
   Heading: {
+    baseStyle: (props) => ({
+      color: mode('#000000', '#37393F')(props),
+      fontFamily: 'Plus Jakarta Sans'
+    }),
     variants: {
       'page-title-secondary': {
-        color: '#757575',
-        _dark: { color: '#757575' }
+        color: mode('#757575', '#757575'),
+        _dark: {}
       },
       'page-title-main': {
         color: '#000000',
-
+        fontFamily: 'Plus Jakarta Sans',
         lineHeight: '1.0em',
         // fontWeight: '800',
         // textShadow: '10px 4px 10px #5C5A52',
-        _dark: { color: '#F3F3F3', textShadow: 'none' }
+        _dark: {
+          color: '#F3F3F3',
+          textShadow: 'none'
+        }
       },
       'component-title': {
+        fontFamily: 'Plus Jakarta Sans',
         color: '#000000',
-        _dark: { color: '#37393F' }
+        _dark: {
+          color: '#37393F'
+        }
       },
       'page-title-mini': {
-        color: '#37393F',
-        _dark: { color: '#37393F' }
+        color: mode('#37393F', '#37393F'),
+        _dark: {}
       }
     },
     sizes: {
@@ -91,8 +102,13 @@ const components = {
     }
   },
   Text: {
+    baseStyle: (props) => ({
+      color: mode('#000000', '#F3F3F3')(props),
+      fontFamily: 'Noto Serif'
+    }),
     variants: {
       'sub-heading': {
+        fontFamily: 'Plus Jakarta Sans',
         fontWeight: 'bold',
         textUnderlineOffset: '3px',
         lineHeight: '1.5'
@@ -102,21 +118,6 @@ const components = {
         color: '#b98929',
         textUnderlineOffset: '3px',
         lineHeight: '1.5'
-      },
-      'outline-s': {
-        // fontFamily: "Inter",
-        // color: mode('#000000', '#F3F3F3')
-        // color: mode('#000000', '#5C5A52')
-        color: '#000000',
-        _dark: {
-          color: '#f3f3f3'
-        }
-      },
-      'outline-p': {
-        color: '#37393F',
-        _dark: {
-          color: '#5c5a52'
-        }
       }
     },
     sizes: {
@@ -124,14 +125,14 @@ const components = {
         fontSize: 'md'
       },
       md: {
-        fontSize: 'lg'
+        fontSize: '16px'
       }
     }
   },
 
   Link: {
     baseStyle: (props) => ({
-      color: mode('#000000', '#757575')(props),
+      color: mode('#000000', '#5a5a5a')(props),
       fontWeight: 'bold',
       fontSize: '1.0rem',
 
@@ -155,7 +156,7 @@ const components = {
       }
     }
   },
-  Tag: tagTheme,
+  // Tag: tagTheme,
   Button: {
     variants: {
       'submit-button': {
@@ -214,7 +215,6 @@ const theme = extendTheme({
   components,
   config,
   styles,
-  fonts,
   colors
 });
 export default theme;

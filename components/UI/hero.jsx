@@ -56,12 +56,12 @@ const Hero = () => {
           transition={{ duration: 0.4 }} // Animation duration
         >
           <Box display={{ base: "block", md: "block" }} boxSizing="border-box" width={{ base: "400px", md: "600px" }}>
-            <Text variant="outline-s" size={{ base: "md", md: "md" }} mb="31px" mt="30px">
+            <Text  size={{ base: "sm", md: "md" }} mb="31px" mt="30px">
               I possess an insatiable curiosity for the complexities of our world and the remarkable innovations that shape it.
               I view the world through the lens of engineering, particularly software, with curiosity as my &apos;focus ring&apos;. Whether I am peering through the software engineering lens or using another as the situation demands, my goal remains the same: to uncover the world&apos;s ingenious marvels.
             </Text>
-            <Text variant="outline-s" size={{ base: "sm", md: "md" }} mb="31px">
-              So far, I have developed a profound connection with electronics, mechanical architectures, music, art, philosophy, and others. These diverse interests allow me to share a rich tapestry of experiences with you in my distinct and unconventional way.
+            <Text  size={{ base: "sm", md: "md" }} mb="31px">
+              I have a profound connection with electronics, mechanical architectures, music, art and philosophy. These diverse interests allow me to share a rich tapestry of experiences with you in an unconventional way.
             </Text>
           </Box>
         </motion.div>

@@ -17,10 +17,9 @@ const EmblaCarousel = (props) => {
     const portfolio_data = data
     const [emblaRef, emblaApi] = useEmblaCarousel(options)
 
-    const SelectedEmblaDotColor = useColorModeValue("#000000", "#F3F3F3")
+    const SelectedEmblaDotColor = "#FF850F" 
     const emblaDotColor = useColorModeValue("#CECECF", "#757575")
-    const { selectedIndex, scrollSnaps, onDotButtonClick } =
-        useDotButton(emblaApi)
+    const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(emblaApi)
 
     const {
         prevBtnDisabled,
