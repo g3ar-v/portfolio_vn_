@@ -110,6 +110,7 @@ const components = {
       'sub-heading': {
         fontFamily: 'Plus Jakarta Sans',
         fontWeight: 'bold',
+        color: '#F3F3F3',
         textUnderlineOffset: '3px',
         lineHeight: '1.5'
       },
